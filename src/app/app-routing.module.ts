@@ -16,25 +16,7 @@ const routes: Routes = [
         (m) => m.LayoutModule
       ),
   }
-  // {
-  //   path: 'admin',
-  //   loadChildren: () =>
-  //     import('./presentation/layouts.module').then((m) => m.LayoutsModule),
-  // },
-  // {
-  //   path: '',
-  //   loadChildren: () =>
-  //     import('./presentation/admin/login/login.module').then(
-  //       (m) => m.LoginModule
-  //     ),
-  // },
-  // {
-  //   path: '**',
-  //   loadChildren: () =>
-  //     import('./presentation/admin/login/login.module').then(
-  //       (m) => m.LoginModule
-  //     ),
-  // },
+
 ];
 
 @NgModule({
