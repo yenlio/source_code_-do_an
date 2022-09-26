@@ -7,23 +7,24 @@
     <!--    Main Content-->
     <!-- ===============================================-->
     <main class="main" id="top">
-      <nav class="navbar navbar-expand-lg navbar-light fixed-top py-5 d-block" data-navbar-on-scroll="data-navbar-on-scroll">
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block bg-white" data-navbar-on-scroll="data-navbar-on-scroll">
         <div class="container"><a class="navbar-brand" href="index.html"><img src="assets/img/logo.svg" height="34" alt="logo" /></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
           <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base align-items-lg-center align-items-start">
-              <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#service">Service</a></li>
-              <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#destination">Destination</a></li>
-              <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#booking">Booking</a></li>
-              <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#testimonial">Testimonial</a></li>
-              <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#!">Login</a></li>
+              <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#service">Trang chủ</a></li>
+              <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#destination">Chi tiết</a></li>
+              <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#booking">Lịch sử</a></li>
+              <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#testimonial">Blog</a></li>
+              <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="#testimonial">Liên hệ</a></li>
+              <li class="nav-item px-3 px-xl-4"><a class="btn btn-outline-dark order-1 order-lg-0 fw-medium" href="#!">Login</a></li>
               <li class="nav-item px-3 px-xl-4"><a class="btn btn-outline-dark order-1 order-lg-0 fw-medium" href="#!">Sign Up</a></li>
-              <li class="nav-item dropdown px-3 px-lg-0"> <a class="d-inline-block ps-0 py-2 pe-3 text-decoration-none dropdown-toggle fw-medium" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">EN</a>
+              <!-- <li class="nav-item dropdown px-3 px-lg-0"> <a class="d-inline-block ps-0 py-2 pe-3 text-decoration-none dropdown-toggle fw-medium" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">EN</a>
                 <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg" style="border-radius:0.3rem;" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="#!">EN</a></li>
                   <li><a class="dropdown-item" href="#!">BN</a></li>
                 </ul>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
@@ -55,6 +56,100 @@
           </div>
         </div>
       </section>
+       <section class="ftco-section ftco-no-pb ftco-no-pt">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="search-wrap-1 ftco-animate p-4">
+              <form action="#" class="search-property-1">
+                <div class="row">
+                  <div class="col-lg align-items-end">
+                    <div class="form-group">
+                      <label for="#">Destination</label>
+                      <div class="form-field">
+                        <div class="icon">
+                          <span class="ion-ios-search"></span>
+                        </div>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Search place"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg align-items-end">
+                    <div class="form-group">
+                      <label for="#">Check-in date</label>
+                      <div class="form-field">
+                        <div class="icon">
+                          <span class="ion-ios-calendar"></span>
+                        </div>
+                        <input
+                          type="text"
+                          class="form-control checkin_date"
+                          placeholder="Check In Date"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg align-items-end">
+                    <div class="form-group">
+                      <label for="#">Check-out date</label>
+                      <div class="form-field">
+                        <div class="icon">
+                          <span class="ion-ios-calendar"></span>
+                        </div>
+                        <input
+                          type="text"
+                          class="form-control checkout_date"
+                          placeholder="Check Out Date"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg align-items-end">
+                    <div class="form-group">
+                      <label for="#">Price Limit</label>
+                      <div class="form-field">
+                        <div class="select-wrap">
+                          <div class="icon">
+                            <span class="ion-ios-arrow-down"></span>
+                          </div>
+                          <select name="" id="" class="form-control">
+                            <option value="">$5,000</option>
+                            <option value="">$10,000</option>
+                            <option value="">$50,000</option>
+                            <option value="">$100,000</option>
+                            <option value="">$200,000</option>
+                            <option value="">$300,000</option>
+                            <option value="">$400,000</option>
+                            <option value="">$500,000</option>
+                            <option value="">$600,000</option>
+                            <option value="">$700,000</option>
+                            <option value="">$800,000</option>
+                            <option value="">$900,000</option>
+                            <option value="">$1,000,000</option>
+                            <option value="">$2,000,000</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg align-self-end">
+                    <div class="form-group">
+                      <button type="button" class="btn btn-success rounded">Tìm kiếm</button>
+
+                    </div>
+
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
       <!-- ============================================-->
@@ -67,8 +162,8 @@
             <h5 class="text-secondary">CATEGORY </h5>
             <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">We Offer Best Services</h3>
           </div>
-          <div class="row">
-            <div class="col-lg-3 col-sm-6 mb-6">
+          <div class="row ">
+            <div class="col">
               <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
                 <div class="card-body p-xxl-5 p-4"> <img src="assets/img/category/icon1.png" width="75" alt="Service" />
                   <h4 class="mb-3">Calculated Weather</h4>
@@ -76,7 +171,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-sm-6 mb-6">
+            <div class="col">
               <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
                 <div class="card-body p-xxl-5 p-4"> <img src="assets/img/category/icon2.png" width="75" alt="Service" />
                   <h4 class="mb-3">Best Flights</h4>
@@ -84,7 +179,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-sm-6 mb-6">
+            <div class="col">
               <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
                 <div class="card-body p-xxl-5 p-4"> <img src="assets/img/category/icon3.png" width="75" alt="Service" />
                   <h4 class="mb-3">Local Events</h4>
@@ -92,7 +187,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-sm-6 mb-6">
+            <div class="col">
               <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
                 <div class="card-body p-xxl-5 p-4"> <img src="assets/img/category/icon4.png" width="75" alt="Service" />
                   <h4 class="mb-3">Customization</h4>
@@ -121,7 +216,7 @@
             <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">Top Destinations</h3>
           </div>
           <div class="row">
-            <div class="col-4">
+            <div class="col">
               <div class="card overflow-hidden shadow"> <img class="card-img-top" src="assets/img/dest/dest1.jpg" alt="Rome, Italty" />
                 <div class="card-body py-4 px-3">
                   <div class="d-flex flex-column flex-lg-row justify-content-between mb-3">
@@ -131,7 +226,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-4">
+            <div class="col">
               <div class="card overflow-hidden shadow"> <img class="card-img-top" src="assets/img/dest/dest2.jpg" alt="London, UK" />
                 <div class="card-body py-4 px-3">
                   <div class="d-flex flex-column flex-lg-row justify-content-between mb-3">
@@ -141,7 +236,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-4">
+            <div class="col">
               <div class="card overflow-hidden shadow"> <img class="card-img-top" src="assets/img/dest/dest3.jpg" alt="Full Europe" />
                 <div class="card-body py-4 px-3">
                   <div class="d-flex flex-column flex-lg-row justify-content-between mb-3">
@@ -167,7 +262,7 @@
 
         <div class="container">
           <div class="row align-items-center">
-            <div class="col-lg-6">
+            <div class="col">
               <div class="mb-4 text-start">
                 <h5 class="text-secondary">Easy and Fast </h5>
                 <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">Book your next trip in 3 easy steps</h3>
@@ -194,7 +289,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-6 d-flex justify-content-center align-items-start">
+            <div class="col d-flex justify-content-center align-items-start">
               <div class="card position-relative shadow" style="max-width: 370px;">
                 <div class="position-absolute z-index--1 me-10 me-xxl-0" style="right:-160px;top:-210px;"> <img src="assets/img/steps/bg.png" style="max-width:550px;" alt="shape" /></div>
                 <div class="card-body p-3"> <img class="mb-4 mt-2 rounded-2 w-100" src="assets/img/steps/booking-img.jpg" alt="booking" />
@@ -443,6 +538,10 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script src="../../../../assets/vendors/fontawesome/all.min.js"></script>
     <script src="../../../../assets/js/theme.js"></script>
+
+
+  
+
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap" rel="stylesheet">
   </body>
