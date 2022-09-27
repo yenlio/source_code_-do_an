@@ -4,11 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HeaderComponent } from './presentation/shared/header/header.component';
+// import { HeaderComponent } from './presentation/shared/header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
+  
   ],
   imports: [
     BrowserModule,
