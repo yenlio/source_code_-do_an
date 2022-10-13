@@ -1,20 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import {AuthService} from"../../../data/service/auth.service"
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  isUser=true
+  isUser:boolean=true
 
-  constructor() { }
+  constructor(private AuthService: AuthService,) { }
 
   ngOnInit(): void {
-    console.log(this.isUser,"is user");
-    
+    console.log(this.isUser,"is user"); 
   }
-
   registerForm = new FormGroup({
     userName: new FormControl(''),
     passWord: new FormControl(''),
@@ -22,23 +21,25 @@ export class RegisterComponent implements OnInit {
     email: new FormControl(''),
     phone: new FormControl(''),
     company: new FormControl(''),
-    role: new FormControl(''),
+    nameRole: new FormControl(''),
   });
 
-  login(){
+  register(){
     console.log(this.registerForm.value," value");
+    const formData=this.registerForm.value
+    this.AuthService.register(formData).subscribe((res)=>{
+      console.log(res," du lieu back tra ve");
+    })
   }
-
  
-  checkUser(e:Event, item:any){
-    console.log(e, item," itemmm");
-    
-    if(this.registerForm.value.role!=="USER"){
-      this.isUser==true
-      console.log(this.isUser);
+  checkUser(e:any){
+    console.log(e.target.value," itemmm");
+    if(e.target.value !== "USER"){
+      this.isUser=false
+      console.log(this.isUser," thiss");
       
     }
-    else this.isUser==false
+    else this.isUser=true
   }
 
 

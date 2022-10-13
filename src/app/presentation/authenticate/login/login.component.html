@@ -9,18 +9,18 @@
         <div class="col d-flex justify-content-center mt-4 ">
           <h1 class="mt-4">Vitour</h1>
         </div>
-        <form (submit)="login()">
+        <form [formGroup]="loginForm" (submit)="login()">
           <!-- Email input -->
           <div class="form-outline mb-4">
-            <label class="form-label" for="form3Example3">Email address</label>
-            <input type="email" id="form3Example3" class="form-control form-control-lg"
+            <label class="form-label" for="form3Example3">user name</label>
+            <input type="text" id="form3Example3" class="form-control form-control-lg"  formControlName="userName"
               placeholder="Enter a valid email address" />
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-3">
             <label class="form-label" for="form3Example4">Password</label>
-            <input type="password" id="form3Example4" class="form-control form-control-lg"
+            <input type="password" id="form3Example4" class="form-control form-control-lg" formControlName="passWord"
               placeholder="Enter password" />
           </div>
 

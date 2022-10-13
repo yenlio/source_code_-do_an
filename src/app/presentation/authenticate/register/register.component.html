@@ -6,22 +6,22 @@
                     class="img-fluid" alt="Sample image" />
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                <div class="col d-flex justify-content-center mt-4">
+                <div class="col d-flex justify-content-center mt-4">checkUser
                     <h1 class="mt-4">Vitour</h1>
                 </div>
-                <form [formGroup]="registerForm" (submit)="login()">
+                <form [formGroup]="registerForm" (submit)="register()">
                     <div class="form-outline mb-4">
                         <label for="">Đăng ký dưới quyền</label>
                         <div class="role row">
                             <div class="form-check col">
-                                <input class="form-check-input" type="radio" name="role" formControlName="role" value="USER" ng-click="checkUser($event.target.checked)" 
+                                <input class="form-check-input" type="radio" name="nameRole" formControlName="nameRole" value="USER" (change)="checkUser($event)" 
                                     id="flexRadioDefault1">
                                 <label class="form-check-label" for="flexRadioDefault1">
                                     Người mua hàng
                                 </label>
                             </div>
                             <div class="form-check col">
-                                <input class="form-check-input" type="radio" name="role" formControlName="role" value="AGENCY" ng-click="checkUser($event.target.checked)"
+                                <input class="form-check-input" type="radio" name="nameRole" formControlName="nameRole" value="AGENCY" (change)="checkUser($event)"
                                     id="flexRadioDefault2" checked>
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     Người bán hàng
@@ -34,7 +34,7 @@
                         <label class="form-label" for="form3Example3">Họ và tên</label>
                         <input type="text" id="form3Example3" class="form-control form-control" formControlName="fullName"
                             placeholder="Nhập họ và tên" />
-                    </div>
+                    </div>npm
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form3Example3">Tên đăng nhập</label>
                         <input type="text" id="form3Example3" class="form-control form-control" formControlName="userName"
