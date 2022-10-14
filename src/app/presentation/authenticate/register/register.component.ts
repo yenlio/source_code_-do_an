@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import {AuthService} from"../../../data/service/auth.service"
 @Component({
   selector: 'app-register',
@@ -9,7 +10,7 @@ import {AuthService} from"../../../data/service/auth.service"
 export class RegisterComponent implements OnInit {
   isUser:boolean=true
 
-  constructor(private AuthService: AuthService,) { }
+  constructor(private AuthService: AuthService,private router: Router) { }
 
   ngOnInit(): void {
     console.log(this.isUser,"is user"); 
@@ -26,9 +27,12 @@ export class RegisterComponent implements OnInit {
 
   register(){
     console.log(this.registerForm.value," value");
+    this.registerForm.value.nameRole=""
     const formData=this.registerForm.value
     this.AuthService.register(formData).subscribe((res)=>{
       console.log(res," du lieu back tra ve");
+      this.router.navigate(['login']);
+
     })
   }
  
