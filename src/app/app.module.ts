@@ -8,8 +8,9 @@ import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from './data/token-interceptor.service';
 import { AuthGuard } from './presentation/shared/auth/auth.guard';
 import { JwtHelperService, JWT_OPTIONS  } from '@auth0/angular-jwt';
-// import { AdminDashboardComponent } from './presentation/admin-dashboard/admin-dashboard.component';
-// import { HeaderComponent } from './presentation/shared/header/header.component';
+import { MaterialModule } from './material.module';
+import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,11 +18,16 @@ import { JwtHelperService, JWT_OPTIONS  } from '@auth0/angular-jwt';
   
   ],
   imports: [
+    MaterialModule,
     BrowserModule,
     NgbModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
+ 
   providers: [ {
     provide:HTTP_INTERCEPTORS,
     useClass:TokenInterceptorService,

@@ -11279,7 +11279,13 @@
 //   body.sidebar-toggled footer.sticky-footer {
 //     width: 100%;
 //   }
-  
+
+app-top-bar{
+    position: fixed;
+    top: 0px;
+    left: 250px;
+    right: 0px;
+}
 .content {
   margin-left: 100px;
   background-color: aqua;

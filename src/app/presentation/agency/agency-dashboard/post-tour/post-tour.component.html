@@ -1,1 +1,38 @@
-<p>post-tour worksttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt!</p>
+<div class="post-data">
+    <form [formGroup]="postTourForm">
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Tên tour du lịch</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="title" placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Example textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="description"></textarea>
+        </div>
+        <!-- <div class="form-group">
+            <label for="exampleFormControlSelect1">Example select</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div> -->
+       
+
+        <div class="col-12">
+            <div class="input-group">
+                <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker
+                    #d="ngbDatepicker" formControlName="timeStart">
+                <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+            </div>
+        </div>
+
+        <button> submit</button>
+    </form>
+
+
+
+
+
+</div>
