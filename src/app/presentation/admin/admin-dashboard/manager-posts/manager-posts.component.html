@@ -1,0 +1,37 @@
+<div class="manager-post">
+    <table class="table">
+        <thead class="thead-dark" >
+            <tr>
+                <th scope="col">#id Tour</th>
+                <th scope="col">Tên tour</th>
+                <th scope="col">Đơn giá (VND)</th>
+                <th scope="col">Số lượng người</th>
+                <th scope="col">Thời gian khởi hành</th>
+                <th scope="col">Công ty chủ quản</th>
+                <th scope="col" colspan="3" class=""></th>
+              
+            
+            </tr>
+        </thead>
+        <tbody>
+         
+            <tr *ngFor="let tour of dataTour">
+                <!-- <th scope="row">3</th> -->
+                <td>{{tour.id}}</td>
+                <td>{{tour.title}}</td>
+                <td>{{tour.price}}</td>
+                <td>{{tour.totalMember}}</td>
+                <td>{{tour.timeStart}}</td>
+                <td>Công ty a</td>
+                <button type="button" class="btn btn-link" (click)="openPopup()">Xem chi tiết</button>
+                <td><button class="btn btn-primary" type="submit">Duyệt</button></td>
+                 <td>
+                    <button type="button" class="btn btn-danger">Hủy</button>
+                 </td>
+            </tr>
+          
+        
+        </tbody>
+    </table>
+</div>
+<!-- <app-popup-detail *ngIf="showForm===true" [showForm]="showForm"></app-popup-detail> -->
