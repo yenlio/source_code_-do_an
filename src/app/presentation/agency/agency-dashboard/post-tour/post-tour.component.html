@@ -61,25 +61,16 @@
       </select>
     </div>
 
-    <div class="row">
-      <div class="input-group">
-        <label for="">thời gian bắt đầu</label>
-        <input
-          class="form-control"
-          placeholder="yyyy-mm-dd"
-          name="dp"
-          [(ngModel)]="dataTour.timeStart"
-          ngbDatepicker
-          #d="ngbDatepicker"
-          formControlName="timeStart"
-        />
-        <button
-          class="btn btn-outline-secondary calendar"
-          (click)="d.toggle()"
-          type="button"
-        ></button>
-      </div>
-    </div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="dataTour.timeStart" formControlName="timeStart">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker">
+        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+      </mat-datepicker-toggle>    
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    
     <!-- <div class="form-group">
       <label for="exampleFormControlTextarea1">Số lượng người tham </label>
       <textarea

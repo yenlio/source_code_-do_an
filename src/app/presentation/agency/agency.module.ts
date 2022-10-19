@@ -7,7 +7,7 @@ import { PostTourComponent } from '../agency/agency-dashboard/post-tour/post-tou
 import { SideBarComponent } from './agency-dashboard/side-bar/side-bar.component';
 import { TopBarComponent } from './agency-dashboard/top-bar/top-bar.component';
 import { MaterialModule } from 'src/app/material.module';
-import { NgbDate, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDate, NgbModule,NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/agency' },
@@ -32,6 +32,7 @@ const routes: Routes = [
     SideBarComponent,
     TopBarComponent
   ],
+ 
   imports: [
     // RouterModule.forRoot(routes, { enableTracing: false, scrollPositionRestoration: 'enabled' }),
     NgbModule,
@@ -40,7 +41,8 @@ const routes: Routes = [
     MaterialModule,
     CommonModule,
     RouterModule.forChild(routes),
-  ]
+  ],
+  
 })
 export class AgencyModule { }
 

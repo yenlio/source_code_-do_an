@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import {FormGroup, FormControl} from '@angular/forms';
-import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
+import {NgbDateStruct,NgbDateParserFormatter,NgbDate} from '@ng-bootstrap/ng-bootstrap';
 import { AgencyService } from 'src/app/data/service/agency.service';
+
+
+
+
+
+
 @Component({
   selector: 'app-post-tour',
   templateUrl: './post-tour.component.html',
   styleUrls: ['./post-tour.component.scss']
 })
+
+
+
+
 export class PostTourComponent implements OnInit {
   
-  model!: NgbDateStruct;
+  timeStart!:  NgbDateStruct;
   myFiles:string [] = [];
 
   constructor(private AgencyService:AgencyService) { }
@@ -24,7 +34,6 @@ export class PostTourComponent implements OnInit {
                 star:'' ,
                 comment:'' ,
                 totalMember:'',
-                timeStart :'',
                 totalDay :'',
                 productStatus:'',};
 
@@ -32,9 +41,9 @@ export class PostTourComponent implements OnInit {
   postTourForm = new FormGroup({
                 title: new FormControl(""),
                 description: new FormControl(""),
-                timeStart: new FormControl<Date | null>(null),
                 price: new FormControl(""),
                 totalDay: new FormControl(""),
+                timeStart: new FormControl(""),
                 totalMember: new FormControl(""),
                 image: new FormControl(""),
   
@@ -56,19 +65,26 @@ export class PostTourComponent implements OnInit {
   
     
   }
+ 
   submit(){
+   var current_date=new Date(this.dataTour.timeStart);
+   var timestamp = current_date.getTime();
+   var formatted_date = current_date.getDate() + "/" + current_date.getMonth() + "/" + current_date.getFullYear()
 
-    console.log(this.dataTour," value");
-    
+   console.log(formatted_date," log");
+   
+         
+   
+     
     const formData = new FormData();
     formData.append("price",this.dataTour.price)
     formData.append("description",this.dataTour.description)
     // formData.append("star",this.dataTour.star)
     // formData.append("comment",this.dataTour.comment)
     formData.append("totalMember",this.dataTour.totalMember)
-    // formData.append("timeStart",this.dataTour.timeStart)
+    formData.append("timeStart",formatted_date)
     formData.append("title",this.dataTour.title)
-    // formData.append("totalDay",this.dataTour.totalDay)
+    formData.append("totalDay",this.dataTour.totalDay)
     for (var i = 0; i < this.myFiles.length; i++) { 
       formData.append("image", this.myFiles[i]);
     }

@@ -7,7 +7,7 @@ import { ManagerPostsComponent } from './admin-dashboard/manager-posts/manager-p
 import { SideBarComponent } from './admin-dashboard/side-bar/side-bar.component';
 import { TopBarComponent } from './admin-dashboard/top-bar/top-bar.component';
 import { PopupDetailComponent } from './admin-dashboard/popup-detail/popup-detail.component';
-
+import {MatDialogModule} from '@angular/material/dialog';
 const routes: Routes = [
   {
     path: '',
@@ -32,6 +32,7 @@ const routes: Routes = [
     PopupDetailComponent
   ],
   imports: [
+    MatDialogModule,
     CommonModule,
     RouterModule.forChild(routes),
   ]
