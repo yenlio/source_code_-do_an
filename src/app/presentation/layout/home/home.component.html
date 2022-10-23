@@ -261,65 +261,16 @@
           </div>
           <div class="row row-cols-4"> 
             <div class="col-4">
-              <div class="card" style="width: 18rem; margin: 0.5rem; background-color: antiquewhite;">
+              <div class="card" style="width: 18rem; margin: 0.5rem; background-color: antiquewhite;" *ngFor="let tour of dataTour">
                 <img src="../../../../assets/images/image_1.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                  <h5 class="card-title">{{tour.title}}</h5>
+                  <p class="card-text">{{tour.description}}</p>
+                  <a href="#" class="btn btn-primary">Xem chi tiết</a>
                 </div>
               </div>
             </div>
-            <div class="col-4">
-              <div class="card" style="width: 18rem;  margin: 0.5rem; background-color: antiquewhite;">
-                <img src="../../../../assets/images/image_1.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card" style="width: 18rem;  margin: 0.5rem; background-color: antiquewhite;">
-                <img src="../../../../assets/images/image_1.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card" style="width: 18rem;  margin: 0.5rem; background-color: antiquewhite;">
-                <img src="../../../../assets/images/image_1.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card" style="width: 18rem;  margin: 0.5rem; background-color: antiquewhite;">
-                <img src="../../../../assets/images/image_1.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card" style="width: 18rem;  margin: 0.5rem; background-color: antiquewhite;">
-                <img src="../../../../assets/images/image_1.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
+           
           </div>
         </div>
       </section>
