@@ -6,7 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from '../shared/header/header.component';
 const routes: Routes = [
   {
-    path: 'detail',
+    path: 'detail/:id',
     component: DetailsComponent,
   },
   {
