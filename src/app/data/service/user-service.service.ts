@@ -14,6 +14,8 @@ export class UserServiceService {
  
   constructor(private http: HttpClient) { }
   public getTourById(id:any): Observable<any> {
+    console.log(id,"id detail");
+    
     const path = AUTH_API + 'tour/getTour'+`?id=${id}`;
    
     return this.http.get(path);

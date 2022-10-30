@@ -7,12 +7,15 @@ import { HeaderComponent } from '../shared/header/header.component';
 const routes: Routes = [
   {
     path: 'detail/:id',
-    component: DetailsComponent,
+    component: DetailsComponent
   },
   {
     path: 'home',
     component: HomeComponent,
   },
+  {
+    path:"", redirectTo:'home',pathMatch:'full'
+  }
 ];
 
 @NgModule({
