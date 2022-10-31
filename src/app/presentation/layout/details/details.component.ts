@@ -18,7 +18,7 @@ export class DetailsComponent implements OnInit {
   }
   getPostTourById(id: number) {
     this.UserService.getTourById(id).subscribe((res) => {
-     this.tour=res
+     this.tour=res.data
      console.log(this.tour,"tour detail");
      
     })

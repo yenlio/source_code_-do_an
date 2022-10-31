@@ -1,12 +1,84 @@
 {
-    "product": [
-      {
-        "title": "sdf",
-        "images": "sdf",
-        "price": "fhgf",
-        "description": "",
-        "like": "fghf"
-        
-      }
-    ]
-  }
+  "comments": [
+    {
+      "id": "1",
+      "body": "comments first",
+      "username": "yen",
+      "userId": 1,
+      "parentId": null,
+      "createAt": "12"
+    },
+    {
+      "id": "2",
+      "body": "comments second",
+      "username": "yen",
+      "userId": 1,
+      "parentId": null,
+      "createAt": "12"
+    },
+    {
+      "id": "3",
+      "body": "comments third",
+      "username": "yen",
+      "userId": 1,
+      "parentId": null,
+      "createAt": "12"
+    },
+    {
+      "id": "4",
+      "body": "comments first",
+      "username": "yen",
+      "userId": 1,
+      "parentId": null,
+      "createAt": "12"
+    },
+    {
+      "body": "ghjgjgj",
+      "parentId": null,
+      "createAt": "2022-10-31T07:58:00.526Z",
+      "userId": "1",
+      "username": "hoangyennn",
+      "id": "lGjIaoj"
+    },
+    {
+      "body": "oyoyuoyo",
+      "parentId": null,
+      "createAt": "2022-10-31T07:59:12.070Z",
+      "userId": "1",
+      "username": "hoangyennn",
+      "id": "P5_ol45"
+    },
+    {
+      "body": "toi ten la nguyen hoang yen",
+      "parentId": null,
+      "createAt": "2022-10-31T07:59:32.233Z",
+      "userId": "1",
+      "username": "hoangyennn",
+      "id": "r7TzEJi"
+    },
+    {
+      "body": "dsfsd",
+      "parentId": null,
+      "createAt": "2022-10-31T08:01:09.238Z",
+      "userId": "1",
+      "username": "hoangyennn",
+      "id": "ZYnYaGP"
+    },
+    {
+      "body": "dsfs",
+      "parentId": null,
+      "createAt": "2022-10-31T08:01:49.174Z",
+      "userId": "1",
+      "username": "hoangyennn",
+      "id": "eSkZIv7"
+    },
+    {
+      "body": "dfgdgdg",
+      "parentId": null,
+      "createAt": "2022-10-31T09:17:54.291Z",
+      "userId": "1",
+      "username": "hoangyennn",
+      "id": "tGkARcI"
+    }
+  ]
+}

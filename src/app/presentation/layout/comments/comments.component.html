@@ -1,0 +1,12 @@
+<div class="comment">
+    <h3 class="comment-title"> Binh luan</h3>
+    <div class="comment-form-title">
+        write comment
+    </div>
+    <app-comment-form submitLabel="Dang" (handleSubmit)="addComment({text:$event,parentId:null})"></app-comment-form>
+    <div class="comments-container">
+        <app-comment *ngFor="let comment of comments" [comment]="comment" [currentUserId]="CurrentUserId">
+
+        </app-comment>
+    </div>
+</div>

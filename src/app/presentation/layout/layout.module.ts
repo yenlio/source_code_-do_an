@@ -4,6 +4,10 @@ import { HomeComponent } from './home/home.component';
 import { DetailsComponent } from './details/details.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from '../shared/header/header.component';
+import { CommentsComponent } from './comments/comments.component';
+import { CommentComponent } from './comment/comment.component';
+import { CommentFormComponent } from './comment-form/comment-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 const routes: Routes = [
   {
     path: 'detail/:id',
@@ -19,13 +23,19 @@ const routes: Routes = [
 ];
 
 @NgModule({
+  // schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   declarations: [
     HomeComponent,
     DetailsComponent,
-    HeaderComponent
+    HeaderComponent,
+    CommentsComponent,
+    CommentComponent,
+    CommentFormComponent
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes),
   ]
 })
