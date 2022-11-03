@@ -1,5 +1,5 @@
-.manager-post{
-   
+.manager-post {
+
     margin-left: 250px;
     padding-left: 20px;
     padding-right: 20px;
@@ -7,4 +7,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.cdk-overlay-pane {
+    width: 1000px;
+    height: 100vh;
 }

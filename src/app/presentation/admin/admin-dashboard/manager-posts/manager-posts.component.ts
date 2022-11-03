@@ -17,9 +17,7 @@ export class ManagerPostsComponent implements OnInit {
   getPostTour(){
   this.AdminService.getTour().subscribe((res)=>{
     this.dataTour=res.data
-
     console.log(this.dataTour," data tour");
-    
   })
   }
 
@@ -30,7 +28,6 @@ export class ManagerPostsComponent implements OnInit {
   }
   confirmTour(id:any){
     console.log(id," id");
-    
        this.AdminService.updateTour(id).subscribe((res)=>{
         this.getPostTour()
          
@@ -46,8 +43,7 @@ export class ManagerPostsComponent implements OnInit {
   openDialog(tour:any) {
 
     const dialogRef = this.dialog.open(PopupDetailComponent, {
-      width: '330px',
-      height: '400px',
+      
       data: {
        tour
       }

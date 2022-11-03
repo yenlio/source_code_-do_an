@@ -1,4 +1,5 @@
-<div class="manager-post">
+<div class="tour-access">
+    <h1> CÁC BÀI ĐĂNG ĐÃ ĐƯỢC DUYỆT</h1>
     <table class="table">
         <thead class="thead-dark" >
             <tr>
@@ -13,9 +14,9 @@
             
             </tr>
         </thead>
-        <tbody *ngFor="let tour of dataTour">
+        <tbody *ngFor="let tour of dataTour" >
          
-            <tr *ngIf="tour.productStatus==false" >
+            <tr *ngIf="tour.productStatus==true " >
                 <!-- <th scope="row">3</th> -->
                 <td>{{tour.id}}</td>
                 <td>{{tour.title}}</td>
@@ -23,18 +24,10 @@
                 <td>{{tour.totalMember}}</td>
                 <td>{{tour.timeStart}}</td>
                 <td>Công ty a</td>
-                <button type="button" class="btn btn-link" (click)="openDialog(tour)" >Xem chi tiết</button>
-                <td><button class="btn btn-primary" (click)="confirmTour(tour.id)" type="submit">Duyệt</button></td>
-                 <td>
-                    <button type="button" (click)="deleteTour(tour.id)" class="btn btn-danger">Hủy</button>
-                 </td>
+              
             </tr>
           
         
         </tbody>
     </table>
-</div>
-<div>
-    <app-popup-detail *ngIf="showForm==true" [showForm]="showForm" (confirm)="confirmTour($event)"></app-popup-detail>
-
 </div>

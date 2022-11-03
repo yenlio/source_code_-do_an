@@ -1,28 +1,44 @@
-
-  <h2 mat-dialog-title>Tên tour du lịch</h2>
+<h2 mat-dialog-title>{{ dataDialog.title }}</h2>
 <mat-dialog-content class="mat-typography">
-    <div class="star">*****</div>
-     <h1>{{data.tour.title}}</h1>
-    <p>{{data.tour.price}}</p>
-    <p>{{data.tour.totalMember}}</p>
-    <p>{{data.tour.timeStart}}</p>
-    <div class="listImage">
-      <img/>
+  <div class="container">
+    <div class="row">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDvh7fAmpmE0VPkB-uCi3HyHMtqTy6eZK2d4etaBJB&s"
+        alt="" style="width:1000px; height: fit-content ;">
     </div>
-    <div class="description">
-     <div *ngFor="let img of data.tour.imageTours">
-       <img src="{{img.fileUrl}}" alt="" width="100px" height=" 100px"/>
-     </div>
+    <div class="row">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+
+            <th scope="col">Đơn vị tổ chức</th>
+            <th scope="col">Đơn giá (VND)</th>
+            <th scope="col">Số lượng người tối đa</th>
+            <th scope="col">Thời gian khởi hành</th>
+            <th scope="col">Công ty chủ quản</th>
+            <th scope="col" colspan="3" class=""></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <!-- <th scope="row">3</th> -->
+            <td>Công ty Việt</td>
+            <td>{{dataDialog.price}}</td>
+            <td>{{dataDialog.totalMember}}</td>
+            <td>{{dataDialog.timeStart}}</td>
+            <td>Công ty a</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
+    <h1>Mô tả chi tiết </h1>
+    <p>{{dataDialog.description}}</p>
+  </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial  (click)="confirmTour(dataDialog.id)" >Duyệt</button>
+  
 </mat-dialog-actions>
 
-  
-
-
-
-
+<!-- <button class="btn btn-primary" (click)="confirmTour(dataDialog.id)" type="submit">Duyệt</button> -->

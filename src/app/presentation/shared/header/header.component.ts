@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
+  statusLogin!:any
   constructor() { }
 
   ngOnInit(): void {
+    this.statusLogin=localStorage.getItem("message")
+    
   }
+
+  
 
 }

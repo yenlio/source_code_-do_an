@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from 'src/app/data/service/cart.service';
 import { UserServiceService } from 'src/app/data/service/user-service.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { UserServiceService } from 'src/app/data/service/user-service.service';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor(private route :ActivatedRoute, private UserService: UserServiceService) { }
+  constructor(private route :ActivatedRoute, private UserService: UserServiceService, private cartService:CartService) { }
 
   tour!:any
   ngOnInit(): void {
@@ -22,6 +23,10 @@ export class DetailsComponent implements OnInit {
      console.log(this.tour,"tour detail");
      
     })
+  }
+
+  addToCart(){
+   this.cartService.addtoCart(this.tour)
   }
 
 }

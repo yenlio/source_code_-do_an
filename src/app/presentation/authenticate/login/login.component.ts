@@ -34,9 +34,11 @@ export class LoginComponent implements OnInit {
       
       const listRole: any[]=[]
       res.role.map((item:any)=>{
-      listRole.push(item.authority)
+      listRole.push(item)
       
       })
+      console.log(listRole,"role nè");
+      localStorage.setItem("message",res.message)
       localStorage.setItem("token", this.responseData)
       localStorage.setItem('roles', JSON.stringify(listRole));
       this.router.navigate(['/']);

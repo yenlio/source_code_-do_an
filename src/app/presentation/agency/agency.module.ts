@@ -9,6 +9,9 @@ import { TopBarComponent } from './agency-dashboard/top-bar/top-bar.component';
 import { MaterialModule } from 'src/app/material.module';
 import { NgbDate, NgbModule,NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+// import { TourComponent } from './agency-dashboard/tour/tour.component';
+import { TourAccessComponent } from './agency-dashboard/tour-access/tour-access.component';
+import { ManagerPostAgencyComponent } from './agency-dashboard/manager-post-agency/manager-post-agency.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/agency' },
   {
@@ -16,8 +19,9 @@ const routes: Routes = [
     component: AgencyDashboardComponent,
     children:[
       {path:'chart',component:ChartTourComponent},
-      {path:'postTour',component:PostTourComponent}
-
+      {path:'postTour',component:PostTourComponent},
+      {path:'tourAccess',component:TourAccessComponent},
+      {path:'tourManager',component:ManagerPostAgencyComponent},
     ]
   },
  
@@ -30,7 +34,10 @@ const routes: Routes = [
     ChartTourComponent,
     PostTourComponent,
     SideBarComponent,
-    TopBarComponent
+    TopBarComponent,
+   
+    TourAccessComponent,
+         ManagerPostAgencyComponent
   ],
  
   imports: [

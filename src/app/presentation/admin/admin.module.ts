@@ -8,6 +8,11 @@ import { SideBarComponent } from './admin-dashboard/side-bar/side-bar.component'
 import { TopBarComponent } from './admin-dashboard/top-bar/top-bar.component';
 import { PopupDetailComponent } from './admin-dashboard/popup-detail/popup-detail.component';
 import {MatDialogModule} from '@angular/material/dialog';
+// import { MatCarouselModule } from 'ng-mat-carousel';
+// import { MatCarouselModule } from '@ngmodule/material-carousel';
+
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { MatCarouselModule } from '@ngmodule/material-carousel';
 const routes: Routes = [
   {
     path: '',
@@ -32,6 +37,8 @@ const routes: Routes = [
     PopupDetailComponent
   ],
   imports: [
+    // BrowserAnimationsModule,
+    // MatCarouselModule,
     MatDialogModule,
     CommonModule,
     RouterModule.forChild(routes),
