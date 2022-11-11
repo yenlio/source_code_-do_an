@@ -1,3 +1,43 @@
 <div class="manager-role">
-  
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#id Tour</th>
+                <th scope="col">Tên tour</th>
+                <th scope="col">Đơn giá (VND)</th>
+                <th scope="col">Số lượng người</th>
+                <th scope="col">Thời gian khởi hành</th>
+                <th scope="col">Công ty chủ quản</th>
+                <th scope="col" colspan="3" class=""></th>
+
+
+            </tr>
+        </thead>
+        <tbody >
+
+            <tr>
+                <!-- <th scope="row">3</th> -->
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <!-- <button type="button" class="btn btn-link" (click)="openDialog(tour)">Xem chi tiết</button> -->
+                <td><button class="btn btn-primary"  type="submit">Duyệt</button></td>
+                <!-- <td>
+                    <button type="button" (click)="deleteTour(tour.id)" class="btn btn-danger">Hủy</button>
+                </td> -->
+            </tr>
+
+
+        </tbody>
+    </table>
+
+    <!-- <div>
+        <app-popup-detail *ngIf="showForm==true" [showForm]="showForm" (confirm)="confirmTour($event)">
+        </app-popup-detail>
+
+    </div> -->
+
 </div>

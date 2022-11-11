@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
+      import('./presentation/layout/layout.module').then(
+        (m) => m.LayoutModule
+      )
+      // , canActivate:[AuthGuard]
+  },
+  {
+    path: 'auth',
+    loadChildren: () =>
       import('./presentation/authenticate/authenticate.module').then(
         (m) => m.AuthenticateModule
       )

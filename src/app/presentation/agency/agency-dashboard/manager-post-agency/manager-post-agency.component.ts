@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AdminService } from 'src/app/data/service/admin.service';
+import { AgencyService } from 'src/app/data/service/agency.service';
 @Component({
   selector: 'app-manager-post-agency',
   templateUrl: './manager-post-agency.component.html',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManagerPostAgencyComponent implements OnInit {
 
-  constructor() { }
+  dataTour!:any
+  localRole!:any
+  constructor(private AgencyService:AgencyService) { }
 
   ngOnInit(): void {
+    this.getPostTour()
   }
 
+  getPostTour(){
+    const id= localStorage.getItem("id")
+    this.AgencyService.getTourbyAgency(id).subscribe((res)=>{
+      this.dataTour=res.data
+     console.log("thanh cong");
+     
+    })
+    }
 }

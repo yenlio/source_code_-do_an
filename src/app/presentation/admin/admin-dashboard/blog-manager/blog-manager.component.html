@@ -1,0 +1,56 @@
+
+
+ <div class="manager-blog">
+    <div>TinyMCE & Angular</div>
+    <form (ngSubmit)="onSubmit()" [formGroup]="myForm">
+        <div class="title">
+          <input
+            matInput
+            [formControl]="myForm.controls.title"
+            placeholder="Title"
+            type="text"/>
+  
+          <!-- <mat-error *ngIf="myForm.controls.title.hasError('required')">
+            Title is required
+          </mat-error> -->
+        </div>
+  
+        <div class="mat-form-field-wrapper">
+          <editor
+            apiKey="qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc"
+            [formControl]="myForm.controls.body"
+            class="mat-elevation-z1"
+            (onInit)="handleEditorInit($event)"
+            [init]="{
+              icons: 'material',
+              skin: 'borderless',
+           
+              menubar: false,
+              min_height: 150,
+              plugins: 'image code|',
+              toolbar: 'undo redo | blocks | bold italic |image| alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | help|'
+            }"
+          ></editor>
+  
+          <div class="mat-form-field-subscript-wrapper">
+            <!-- <mat-error *ngIf="myForm.controls.body.hasError('maxlength')">
+              Your post exceeds exceeds the character limit
+              {{ myForm.controls.body.getError('maxlength').actualLength }} / 
+              {{ myForm.controls.body.getError('maxlength').requiredLength }}
+            </mat-error>
+  
+            <mat-error *ngIf="myForm.controls.body.touched && myForm.controls.body.hasError('required')">
+              This form is required
+            </mat-error> -->
+          </div>
+        </div>
+        <button mat-raised-button (click)="onSubmit()" [disabled]="!myForm.valid">
+            Submit
+          </button>
+      </form>
+
+      <table>
+        <thead></thead>
+        <tbody></tbody>
+      </table>
+ </div>

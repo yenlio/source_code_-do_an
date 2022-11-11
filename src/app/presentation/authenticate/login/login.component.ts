@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
       })
       console.log(listRole,"role nè");
       localStorage.setItem("message",res.message)
+      localStorage.setItem("id",res.id)
       localStorage.setItem("token", this.responseData)
       localStorage.setItem('roles', JSON.stringify(listRole));
       this.router.navigate(['/']);

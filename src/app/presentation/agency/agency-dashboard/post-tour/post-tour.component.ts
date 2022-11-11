@@ -18,7 +18,7 @@ import { AgencyService } from 'src/app/data/service/agency.service';
 
 
 export class PostTourComponent implements OnInit {
-  
+  idAccount!:any
   timeStart!:  NgbDateStruct;
   myFiles:string [] = [];
 
@@ -70,10 +70,23 @@ export class PostTourComponent implements OnInit {
    var current_date=new Date(this.dataTour.timeStart);
    var timestamp = current_date.getTime();
    var formatted_date = current_date.getDate() + "/" + current_date.getMonth() + "/" + current_date.getFullYear()
-
    console.log(formatted_date," log");
+   this.idAccount=localStorage.getItem("id")
+   
    
          
+   console.log(formatted_date," data dateeeee");
+   console.log(this.dataTour.price," data");
+   console.log(this.dataTour.description," data");
+   console.log(this.dataTour.totalMember," data");
+   console.log(this.idAccount," data");
+
+   console.log(formatted_date," data");
+   console.log(this.dataTour.title," data");
+   console.log(this.dataTour.description," data");
+   console.log(this.dataTour.totalDay," data");
+   console.log(this.myFiles," data");
+
    
      
     const formData = new FormData();
@@ -82,12 +95,16 @@ export class PostTourComponent implements OnInit {
     // formData.append("star",this.dataTour.star)
     // formData.append("comment",this.dataTour.comment)
     formData.append("totalMember",this.dataTour.totalMember)
+    formData.append("idAccount",this.idAccount)
     formData.append("timeStart",formatted_date)
     formData.append("title",this.dataTour.title)
-    formData.append("totalDay",this.dataTour.totalDay)
+    // formData.append("totalDay",this.dataTour.totalDay)
     for (var i = 0; i < this.myFiles.length; i++) { 
       formData.append("image", this.myFiles[i]);
     }
+    
+    
+
 
    this.AgencyService.postTour(formData).subscribe((res)=>{
     if(res.messenger.includes("Thành công")){

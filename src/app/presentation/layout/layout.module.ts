@@ -9,6 +9,8 @@ import { CommentComponent } from './comment/comment.component';
 import { CommentFormComponent } from './comment-form/comment-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CartPaymentComponent } from './cart-payment/cart-payment.component';
+import { BlogComponent } from './blog/blog.component';
+
 const routes: Routes = [
   {
     path: 'detail/:id',
@@ -21,6 +23,10 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartPaymentComponent,
+  },
+  {
+    path: 'blog',
+    component: BlogComponent,
   },
   {
     path:"", redirectTo:'home',pathMatch:'full'
@@ -36,7 +42,8 @@ const routes: Routes = [
     CommentsComponent,
     CommentComponent,
     CommentFormComponent,
-    CartPaymentComponent
+    CartPaymentComponent,
+    BlogComponent
   ],
   imports: [
     CommonModule,

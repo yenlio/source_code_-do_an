@@ -1,1 +1,33 @@
-<p>manager-post-agency works!</p>
+<div class="tour-access">
+    <h1> CÁC BÀI ĐĂNG ĐÃ ĐĂNG</h1>
+    <table class="table">
+        <thead class="thead-dark" >
+            <tr>
+                <th scope="col">#id Tour</th>
+                <th scope="col">Tên tour</th>
+                <th scope="col">Đơn giá (VND)</th>
+                <th scope="col">Số lượng người</th>
+                <th scope="col">Thời gian khởi hành</th>
+                <th scope="col">Công ty chủ quản</th>
+                <th scope="col" colspan="3" class=""></th>
+              
+            
+            </tr>
+        </thead>
+        <tbody *ngFor="let tour of dataTour" >
+         
+            <tr  >
+                <!-- <th scope="row">3</th> -->
+                <td>{{tour.id}}</td>
+                <td>{{tour.title}}</td>
+                <td>{{tour.price}}</td>
+                <td>{{tour.totalMember}}</td>
+                <td>{{tour.timeStart}}</td>
+                <td>Công ty a</td>
+              
+            </tr>
+          
+        
+        </tbody>
+    </table>
+</div>

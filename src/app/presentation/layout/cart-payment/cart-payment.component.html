@@ -21,7 +21,7 @@
                                     <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
                                         class="w-100" alt="Blue Jeans Jacket" />
                                     <a href="#!">
-                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                        <div class="mask" style="background-color: rgba(136, 130, 130, 0.2)"></div>
                                     </a>
                                 </div>
                                 <!-- Image -->
@@ -47,18 +47,20 @@
                                 <!-- Quantity -->
                                 <div class="d-flex mb-4" style="max-width: 300px">
                                     <button class="btn btn-primary px-3 me-2"
-                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                    (click)="stepDown(item.id)">
                                         <img src="../../../../assets/images/left-arrow.png" alt="" width="15px" height="15px">
+                                        
                                     </button>
 
                                     <div class="form-outline">
-                                        <input id="form1" min="0" name="quantity" value="1" type="number"
+                                        <input id="form1" min="0" name="quantity"  [(ngModel)]="item.valuePeople" type="number"
                                             class="form-control" />
-                                        <label class="form-label" for="form1">Số lượng người đăng ký</label>
+                                           
+                                         <label class="form-label" for="form1">Số lượng người đăng ký</label>
                                     </div>
 
                                     <button class="btn btn-primary px-3 ms-2"
-                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                        (click)="stepUp(item.id)">
                                         <img src="../../../../assets/images/right-arrow.png" alt="" width="15px" height="15px">
                                     </button>
                                 </div>
@@ -66,7 +68,7 @@
 
                                 <!-- Price -->
                                 <p class="text-start text-md-center">
-                                    <strong>$17.99</strong>
+                                    <strong>{{item.priceItem}}</strong>
                                 </p>
                                 <!-- Price -->
                             </div>
@@ -128,7 +130,7 @@
                                         <p class="mb-0">(including VAT)</p>
                                     </strong>
                                 </div>
-                                <span><strong>$53.98</strong></span>
+                                <span><strong>{{totalPrice}}</strong></span>
                             </li>
                         </ul>
 

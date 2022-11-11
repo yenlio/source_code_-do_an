@@ -15,6 +15,13 @@ export class AgencyService {
     console.log(path, payload, 'payload');
     return this.http.post(path, payload);
   }
+
+  public getTourbyAgency(id: any): Observable<any> {
+    console.log(id," id");
+    
+    const path = AUTH_API + 'tour'+`?id=${id}`;  
+    return this.http.get(path);
+  }
 }
 
 

@@ -15,6 +15,8 @@ export class DetailsComponent implements OnInit {
   tour!:any
   ngOnInit(): void {
     this.route.params.subscribe(res => this.getPostTourById(res['id']));
+    console.log("du lieu detail");
+    
     // this.route.params.subscribe(params=>this.getPostTourById(params[':id']))
   }
   getPostTourById(id: number) {
@@ -26,6 +28,8 @@ export class DetailsComponent implements OnInit {
   }
 
   addToCart(){
+    this.tour.priceItem=0
+    this.tour.valuePeople=0
    this.cartService.addtoCart(this.tour)
   }
 
