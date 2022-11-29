@@ -64,17 +64,29 @@
 						<div class="tab-pane active" *ngFor="let image of tour.image ;let i=index;let first = first">
 							<img id="pic-1" *ngIf="first" src="{{image.fileUrl}}" />
 						</div>
-
 					</div>
 
-					<ul class="preview-thumbnail nav nav-tabs" id="preview">
-						<div class="image-prv">
-							<ul *ngFor="let image of tour.image ;let i=index;let first = first">
-								<li><img class="image_preview" src="{{image.fileUrl}}" appImage /></li>
-							</ul>
-						</div>
+					<!-- <swiper class="mySwiper" [slidesPerView]="3" [spaceBetween]="30" [pagination]="{clickable: true }" *ngFor="let image of tour.image">
+						<ng-template swiperSlide >
+								<img [src]="image.fileUrl" >
+						  </ng-template>
+							
+					</swiper> -->
+					<!-- <swiper [slidesPerView]="3" [spaceBetween]="50" [virtual]="true">
+						<ng-container *ngFor="let image of tour.image; index as i" style="display: flex;">
+						  <ng-template swiperSlide><img [src]="image.fileUrl" ></ng-template>
+						</ng-container>
+					  </swiper> -->
 
-					</ul>
+					  <div class="gallerize-example" style="margin-top: 10px">
+						<p class="container" gallerize style="display: flex; justify-content: space-between;padding: 0px;">
+							<img *ngFor="let image of tour.image" [src]="image.fileUrl" width="100px" height="60px">
+						</p>
+					</div>
+					 
+
+
+					
 				</div>
 				<div class="col-7" style="    padding-left: 37px;">
 

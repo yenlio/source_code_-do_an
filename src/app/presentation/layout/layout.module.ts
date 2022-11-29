@@ -14,6 +14,12 @@ import { ImageDirective } from './details/image.directive';
 import { MaterialModule } from 'src/app/material.module';
 import { PopupPaymentComponent } from './cart-payment/popup-payment/popup-payment.component';
 import { HistoryComponent } from './history/history.component';
+import { SwiperModule } from 'swiper/angular';
+import { NgImageSliderModule } from 'ng-image-slider';
+
+import { GalleryModule } from 'ng-gallery';
+import { LightboxModule } from 'ng-gallery/lightbox';
+
 const routes: Routes = [
   {
     path: 'detail/:id',
@@ -56,6 +62,10 @@ const routes: Routes = [
     HistoryComponent
   ],
   imports: [
+    LightboxModule,
+    GalleryModule,
+    NgImageSliderModule,
+    SwiperModule,
     MaterialModule,
     CommonModule, 
     FormsModule,

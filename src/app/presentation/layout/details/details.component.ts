@@ -4,7 +4,13 @@ import { CartService } from 'src/app/data/service/cart.service';
 import { UserServiceService } from 'src/app/data/service/user-service.service';
 import { CommentsService } from 'src/app/data/service/comments.service';
 import { FormControl, FormGroup } from '@angular/forms';
+import SwiperCore, { Pagination, Virtual } from "swiper";
+
+
 import { timDTO } from 'src/app/core/entity/tim.entity';
+SwiperCore.use([Pagination]);
+SwiperCore.use([Virtual]);
+
 @Component({
   selector: 'app-details',
   // selector: '[app-details]',
@@ -129,5 +135,7 @@ export class DetailsComponent implements OnInit {
 
     })
   }
+
+  
 
 }

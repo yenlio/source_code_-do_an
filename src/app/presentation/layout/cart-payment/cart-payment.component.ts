@@ -13,7 +13,11 @@ import { PopupPaymentComponent } from './popup-payment/popup-payment.component';
 })
 export class CartPaymentComponent implements OnInit {
   valuePeople: any = 1
-  notification!:any
+  notification:any={
+     data:'',
+     inFor:'',
+     status:false
+  }
   arrPrice: any[] = []
   tour!: any
   priceItem: any = 0
@@ -75,19 +79,23 @@ export class CartPaymentComponent implements OnInit {
 
     console.log(this.dataPayment, " du lieu gui di");
     this.PaymentService.postPayment(this.dataPayment, false).subscribe((res) => {
-    this.notification=res
-      this.openDialog('1000ms', '10ms',res)
-      console.log(res.data.status,"status");
+    this.notification.data=res
+    this.notification.inFor=this.dataPayment.tenNguoiDk
+    this.notification.status=false
+    console.log(this.notification,"thoong baos");
+    
+      this.openDialog('1000ms', '10ms',{noti:this.notification,payment:this.dataPayment,tour:this.tour,totalPrice:this.totalPrice})
+      console.log(res.data,"status");
       
-      if(res.data.status=="CONFIRM"){
-        this.PaymentService.postPayment(this.dataPayment,true).subscribe((res:any)=>{
-          console.log(res,"du lieu thanh cong");
-        setTimeout(() => {
-          this.openDialog('1000ms', '100ms',res)
-          console.log(res.data.status,"status");
-        }, 3000);
-        })
-      }
+      // if(res.data.status=="CONFIRM"){
+      //   this.PaymentService.postPayment(this.dataPayment,true).subscribe((res:any)=>{
+      //     console.log(res,"du lieu thanh cong");
+      //   setTimeout(() => {
+      //     this.openDialog('1000ms', '100ms',res)
+      //     console.log(res.data.status,"status");
+      //   }, 3000);
+      //   })
+      // }
 
 
     })
