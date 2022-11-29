@@ -4,13 +4,16 @@ import { HomeComponent } from './home/home.component';
 import { DetailsComponent } from './details/details.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from '../shared/header/header.component';
-import { CommentsComponent } from './comments/comments.component';
+// import { CommentsComponent } from './comments/comments.component';
 import { CommentComponent } from './comment/comment.component';
 import { CommentFormComponent } from './comment-form/comment-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CartPaymentComponent } from './cart-payment/cart-payment.component';
 import { BlogComponent } from './blog/blog.component';
-
+import { ImageDirective } from './details/image.directive';
+import { MaterialModule } from 'src/app/material.module';
+import { PopupPaymentComponent } from './cart-payment/popup-payment/popup-payment.component';
+import { HistoryComponent } from './history/history.component';
 const routes: Routes = [
   {
     path: 'detail/:id',
@@ -19,6 +22,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+  },
+  {
+    path: 'history',
+    component: HistoryComponent,
   },
   {
     path: 'cart',
@@ -39,14 +46,18 @@ const routes: Routes = [
     HomeComponent,
     DetailsComponent,
     HeaderComponent,
-    CommentsComponent,
+    // CommentsComponent,
     CommentComponent,
     CommentFormComponent,
     CartPaymentComponent,
-    BlogComponent
+    BlogComponent,
+    ImageDirective,
+    PopupPaymentComponent,
+    HistoryComponent
   ],
   imports: [
-    CommonModule,
+    MaterialModule,
+    CommonModule, 
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),

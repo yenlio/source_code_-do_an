@@ -34,8 +34,10 @@ export class PostTourComponent implements OnInit {
                 star:'' ,
                 comment:'' ,
                 totalMember:'',
-                totalDay :'',
-                productStatus:'',};
+                totalDay :2,
+                productStatus:false,
+                demTim:0
+              };
 
 
   postTourForm = new FormGroup({
@@ -95,10 +97,12 @@ export class PostTourComponent implements OnInit {
     // formData.append("star",this.dataTour.star)
     // formData.append("comment",this.dataTour.comment)
     formData.append("totalMember",this.dataTour.totalMember)
+    formData.append("productStatus",this.dataTour.productStatus)
     formData.append("idAccount",this.idAccount)
     formData.append("timeStart",formatted_date)
     formData.append("title",this.dataTour.title)
-    // formData.append("totalDay",this.dataTour.totalDay)
+    formData.append("demTim",this.dataTour.demTim)
+    formData.append("totalDay",this.dataTour.totalDay)
     for (var i = 0; i < this.myFiles.length; i++) { 
       formData.append("image", this.myFiles[i]);
     }

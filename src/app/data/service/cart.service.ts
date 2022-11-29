@@ -7,6 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 export class CartService {
   dataInTour!:any
   public cartItemList : any =[]
+  public arrIdTour : any =[]
   public productList = new BehaviorSubject<any>([]);
   public b = new BehaviorSubject<any>([]);
   
@@ -21,11 +22,18 @@ export class CartService {
   }
 
   addtoCart(tour : any){
+    this.arrIdTour.push(tour.id);
+    console.log(this.arrIdTour," id lisst");
+    
     this.cartItemList.push(tour);
     console.log(this.cartItemList,"1 is");
    this.productList.next(this.cartItemList); 
    localStorage.setItem("tourCart",this.productList.value);
     // console.log(this.productList.value)
+  }
+
+  getlistIdTour(tour:any){
+  
   }
 
   getTotalPrice() : number{

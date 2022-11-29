@@ -20,4 +20,13 @@ export class UserServiceService {
    
     return this.http.get(path);
   }
+
+  public postTim(data:any):Observable<any>{
+    const path=AUTH_API+'tour/postTim'
+    return this.http.post(path,data)
+  }
+  // public getTim():Observable<any>{
+  //   const path=AUTH_API+'tour'
+  //   return this.http.get(path)
+  // }
 }

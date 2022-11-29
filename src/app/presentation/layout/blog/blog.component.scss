@@ -1,14 +1,29 @@
 
 @import url('https://fonts.googleapis.com/css2?family=KoHo:wght@200;300&display=swap');
 
-*{
+* {
     // margin: 0;
     // padding: 0;
     // box-sizing: border-box;
     // background-color: aqua;
 }
 
-#banner{
-    width:"100%"
+#banner {
+    width: "100%"
 }
 
+.tour-item {
+    box-shadow   : rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-bottom: 20px;
+    border-radius : 15px;
+
+}
+
+.container {
+    .list-tour {
+        .wrapper-tour-item {
+            border-radius: 30px;
+        }
+
+    }
+}

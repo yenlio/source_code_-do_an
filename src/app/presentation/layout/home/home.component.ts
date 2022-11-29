@@ -3,31 +3,67 @@ import { AdminService } from 'src/app/data/service/admin.service';
 import { UserServiceService } from 'src/app/data/service/user-service.service';
 import * as moment from 'moment';
 import 'moment/locale/pt-br';
+import { FormControl, FormGroup } from '@angular/forms';
+import { searchDto } from 'src/app/core/entity/search.entity';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
 export class HomeComponent implements OnInit {
-  dataTour!: any
+  dataTour: any
+  dataTourHot:any
+  dataImage:any[]=[]
   timeResult!:any
+  searchData: searchDto ={
+    searchByPlace:'',
+    searchByPrice:0
+  }
   constructor(private AdminService: AdminService, private UserService: UserServiceService) { }
   timeStart!:any
+  // searchData!:any
   ngOnInit(): void {
     this.getPostTour()
+    this.getTourHot()
+    
   }
+
+  
+  
+
+  searchForm= new FormGroup({
+    searchByPlace: new FormControl(''),
+    searchByPrice: new FormControl(0)
+
+  })
+
+  getTourHot(){
+    this.AdminService.getTourhot().subscribe((res)=>{
+      this.dataTourHot=res
+      console.log(this.dataTourHot,"hot");
+      
+
+    })
+  }
+  
   getPostTour() {
     this.AdminService.getTour().subscribe((res) => {
       this.dataTour = res.data
+      for (let i = 0; i < res.data.length; i++) {
+       this.dataImage.push(res.data[i].image)
+
+      }
+      console.log(this.dataImage,"du lieu anh");
+
+
      for (let i = 0; i <= this.dataTour.length; i++) {
       const element = this.dataTour[i];
-      this.test(element)
-
-      console.log(this.dataTour.timeStart," time start");
-      
-   
-     }
-      
+      const an=  moment(element).utc().format('DD-MM-YYYY')
+      this.dataTour[i].timeStart=an
+      // this.test(element)
+      console.log(this.dataTour," du lieu data tour");
+     } 
     })
   }
 
@@ -50,16 +86,32 @@ export class HomeComponent implements OnInit {
 
     const timeResult= [year, month, day].join('-');
     console.log(timeResult,' time');
-    
     return timeResult
   }
 
   test(a:any) { 
-  const an=  moment(a).utc().format('DD-MM-YYYY')
-  this.dataTour.timeStart=an
+ 
   console.log(this.dataTour.timeStart," log innn");
   
 
+}
+search(){
+console.log("j");
+
+ if(this.searchForm){
+  this.searchData.searchByPlace=this.searchForm.value.searchByPlace!,
+  this.searchData.searchByPrice=this.searchForm.value.searchByPrice!
+ }
+  console.log(this.searchData," du lieu chuan bi search");
+  this.AdminService.searchTour(this.searchData).subscribe((res:any)=>{
+  this.dataTour = res
+    
+  })
+
+
+
+  
+  
 }
 
 // localeTest() {

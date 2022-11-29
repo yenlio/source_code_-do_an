@@ -1,145 +1,258 @@
-<section class="h-100 gradient-custom">
-    <div class="row">
-        <div class="col">
-            <app-header></app-header>
-        </div>
+<section class="h-100" style="background-color: #eee; margin-top: -24px">
+  <div class="row">
+    <div class="col">
+      <app-header></app-header>
     </div>
-    <div class="container py-5">
-        <div class="row d-flex justify-content-center my-4">
-            <div class="col-md-8">
-                <div class="card mb-4">
-                    <div class="card-header py-3">
-                        <h5 class="mb-0">Cart - 2 items</h5>
-                    </div>
-                    <div class="card-body" *ngFor="let item of tour">
-                        <!-- Single item -->
-                        <div class="row">
-                            <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                                <!-- Image -->
-                                <div class="bg-image hover-overlay hover-zoom ripple rounded"
-                                    data-mdb-ripple-color="light">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
-                                        class="w-100" alt="Blue Jeans Jacket" />
-                                    <a href="#!">
-                                        <div class="mask" style="background-color: rgba(136, 130, 130, 0.2)"></div>
-                                    </a>
-                                </div>
-                                <!-- Image -->
-                            </div>
-
-                            <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                                <!-- Data -->
-                                <p><strong>{{item.title}}</strong></p>
-                                <p> Don vi gia :{{item.price}} VND</p>
-                                <p>Đợn vị tổ chức: Công ty TNHH Việt travel</p>
-                                <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
-                                    title="Remove item">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                                <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
-                                    title="Move to the wish list">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                                <!-- Data -->
-                            </div>
-
-                            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                                <!-- Quantity -->
-                                <div class="d-flex mb-4" style="max-width: 300px">
-                                    <button class="btn btn-primary px-3 me-2"
-                                    (click)="stepDown(item.id)">
-                                        <img src="../../../../assets/images/left-arrow.png" alt="" width="15px" height="15px">
-                                        
-                                    </button>
-
-                                    <div class="form-outline">
-                                        <input id="form1" min="0" name="quantity"  [(ngModel)]="item.valuePeople" type="number"
-                                            class="form-control" />
-                                           
-                                         <label class="form-label" for="form1">Số lượng người đăng ký</label>
-                                    </div>
-
-                                    <button class="btn btn-primary px-3 ms-2"
-                                        (click)="stepUp(item.id)">
-                                        <img src="../../../../assets/images/right-arrow.png" alt="" width="15px" height="15px">
-                                    </button>
-                                </div>
-                                <!-- Quantity -->
-
-                                <!-- Price -->
-                                <p class="text-start text-md-center">
-                                    <strong>{{item.priceItem}}</strong>
-                                </p>
-                                <!-- Price -->
-                            </div>
-                        </div>
-                        <!-- Single item -->
-
-                        <hr class="my-4" />
-
-                        <!-- Single item -->
-                
-                        <!-- Single item -->
-                    </div>
+  </div>
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center my-4">
+      <div class="col-md-8">
+        <div class="card mb-4">
+          <div class="card-header py-3">
+            <h5 class="mb-0">Cart - 2 items</h5>
+          </div>
+          <div class="card-body" *ngFor="let item of tour">
+            <!-- Single item -->
+            <div class="row">
+              <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                <!-- Image -->
+                <div
+                  class="bg-image hover-overlay hover-zoom ripple rounded"
+                  data-mdb-ripple-color="light"
+                  *ngFor="let image of item.image ;let i=index;let first = first"
+                >
+                  <img
+                   *ngIf="first" src="{{image.fileUrl}}"
+                    class="w-100"
+                    alt="Blue Jeans Jacket"
+                  />
+                  <a href="#!">
+                    <div
+                      class="mask"
+                      style="background-color: rgba(136, 130, 130, 0.2)"
+                    ></div>
+                  </a>
                 </div>
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <p><strong>Expected shipping delivery</strong></p>
-                        <p class="mb-0">12.10.2020 - 14.10.2020</p>
-                    </div>
+                <!-- Image -->
+              </div>
+
+              <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                <!-- Data -->
+                <p>
+                  <strong>{{ item.title }}</strong>
+                </p>
+                <p>Don vi gia :{{ item.price }} VND</p>
+                <p>Đợn vị tổ chức: Công ty TNHH Việt travel</p>
+                <button
+                  type="button"
+                  class="btn btn-primary btn-sm me-1 mb-2"
+                  data-mdb-toggle="tooltip"
+                  title="Remove item"
+                >
+                  <i class="fas fa-trash"></i>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-danger btn-sm mb-2"
+                  data-mdb-toggle="tooltip"
+                  title="Move to the wish list"
+                >
+                  <i class="fas fa-heart"></i>
+                </button>
+                <!-- Data -->
+              </div>
+
+              <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                <!-- Quantity -->
+                <div class="d-flex mb-4" style="max-width: 300px">
+                  <button
+                    class="btn btn-primary px-3 me-2"
+                    (click)="stepDown(item.id)"
+                  >
+                    <img
+                      src="../../../../assets/images/left-arrow.png"
+                      alt=""
+                      width="15px"
+                      height="15px"
+                    />
+                  </button>
+
+                  <div class="form-outline">
+                    <input
+                      id="form1"
+                      min="0"
+                      name="quantity"
+                      [(ngModel)]="item.valuePeople"
+                      type="number"
+                      class="form-control"
+                    />
+
+                    <label class="form-label" for="form1"
+                      >Số lượng người đăng ký</label
+                    >
+                  </div>
+
+                  <button
+                    class="btn btn-primary px-3 ms-2"
+                    (click)="stepUp(item.id)"
+                  >
+                    <img
+                      src="../../../../assets/images/right-arrow.png"
+                      alt=""
+                      width="15px"
+                      height="15px"
+                    />
+                  </button>
                 </div>
-                <div class="card mb-4 mb-lg-0">
-                    <div class="card-body">
-                        <p><strong>We accept</strong></p>
-                        <img class="me-2" width="45px"
-                            src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
-                            alt="Visa" />
-                        <img class="me-2" width="45px"
-                            src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
-                            alt="American Express" />
-                        <img class="me-2" width="45px"
-                            src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
-                            alt="Mastercard" />
-                        <img class="me-2" width="45px"
-                            src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce/includes/gateways/paypal/assets/images/paypal.webp"
-                            alt="PayPal acceptance mark" />
-                    </div>
-                </div>
+                <!-- Quantity -->
+
+                <!-- Price -->
+                <p class="text-start text-md-center">
+                  <strong>{{ item.priceItem }}</strong>
+                </p>
+                <!-- Price -->
+              </div>
             </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-header py-3">
-                        <h5 class="mb-0">Summary</h5>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush">
-                            <li
-                                class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                                Products
-                                <span>$53.98</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                                Shipping
-                                <span>Gratis</span>
-                            </li>
-                            <li
-                                class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
-                                <div>
-                                    <strong>Total amount</strong>
-                                    <strong>
-                                        <p class="mb-0">(including VAT)</p>
-                                    </strong>
-                                </div>
-                                <span><strong>{{totalPrice}}</strong></span>
-                            </li>
-                        </ul>
+            <!-- Single item -->
 
-                        <button type="button" class="btn btn-primary btn-lg btn-block">
-                            Go to checkout
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <hr class="my-4" />
+
+            <!-- Single item -->
+
+            <!-- Single item -->
+          </div>
         </div>
+        <div class="card mb-4">
+          <div class="card-body">
+            <p><strong>Expected shipping delivery</strong></p>
+            <form [formGroup]="userForm">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Họ và tên</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter email"
+                  formControlName="tenNguoiDk"
+                />
+                <small id="emailHelp" class="form-text text-muted"
+                  >Họ và tên người đại diện nếu tour có nhiều người.</small
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputPassword1">Số điện thoại liên hệ</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                  placeholder="VD:0123456789"
+                  formControlName="sdtNguoiDk"
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Số CMT/CCCD</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                  placeholder="Password"
+                  formControlName="soCMNDNguoiDk"
+                  
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Địa điểm đưa đón</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                  placeholder="Địa điểm đưa đón"
+                  formControlName="diaDiemDuaDon"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="card mb-4 mb-lg-0">
+          <div class="card-body">
+            <p><strong>Hình thức thanh toán</strong></p>
+            <img
+              class="me-2"
+              width="45px"
+              src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
+              alt="Visa"
+            />
+            <img
+              class="me-2"
+              width="45px"
+              src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
+              alt="American Express"
+            />
+            <img
+              class="me-2"
+              width="45px"
+              src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
+              alt="Mastercard"
+            />
+            <form [formGroup]="paymentForm">
+              <div class="form-group">
+                <label for="exampleInputPassword1">Mã thẻ thanh toán</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                  placeholder="Password"
+                  formControlName="maAtm"
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Mật khẩu</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                  placeholder="Địa điểm đưa đón"
+                  formControlName="passAtm"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-header py-3">
+            <h5 class="mb-0">Summary</h5>
+          </div>
+          <div class="card-body">
+            <ul class="list-group list-group-flush" *ngFor="let item of tour">
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0"
+              >
+                {{ item.title }}
+                <span>{{ item.price }}</span>
+              </li>
+            </ul>
+
+            <div
+              class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3"
+            >
+              <div>
+                <strong>Tổng số tiền</strong>
+                <strong>
+                  <p class="mb-0">(includ VAT)</p>
+                </strong>
+              </div>
+              <span
+                ><strong>{{ totalPrice }}</strong></span
+              >
+            </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block" (click)="payment()">
+              Thanh toán
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>

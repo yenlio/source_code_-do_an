@@ -34,7 +34,7 @@ const routes: Routes = [
       import('./presentation/admin/admin.module').then(
         (m) => m.AdminModule
       ),
-      canActivate: [AuthGuard,RoleGuard],
+      // canActivate: [AuthGuard,RoleGuard],
       data: { 
         expectedRole: 'admin'
       } 

@@ -29,6 +29,7 @@ body {
             flex-grow: 1; }
   
   .preview-thumbnail.nav-tabs {
+    
     border: none;
     margin-top: 15px; }
     .preview-thumbnail.nav-tabs li {
@@ -170,7 +171,26 @@ body {
 
    
   }
+  .price{
+    padding-top: 50px;
+    text-align: center;
+  }
   .container{
     // margin-top: 100px;
     background-color: #fff;
+  }
+  .product-title{
+    color: #0076ad;
+    text-align: center;
+  }
+  .rating{
+    display: flex;
+    justify-content: flex-start;
+  }
+  .active{
+    opacity: 1;
+  }
+  #preview{
+    display: flex;
+    justify-content: space-around;
   }
