@@ -9,7 +9,7 @@
       <div class="col-md-8">
         <div class="card mb-4">
           <div class="card-header py-3">
-            <h5 class="mb-0">Cart - 2 items</h5>
+            <h5 class="mb-0">Dữ liệu được chọn</h5>
           </div>
           <div class="card-body" *ngFor="let item of tour">
             <!-- Single item -->
@@ -43,22 +43,8 @@
                 </p>
                 <p>Don vi gia :{{ item.price }} VND</p>
                 <p>Đợn vị tổ chức: Công ty TNHH Việt travel</p>
-                <button
-                  type="button"
-                  class="btn btn-primary btn-sm me-1 mb-2"
-                  data-mdb-toggle="tooltip"
-                  title="Remove item"
-                >
-                  <i class="fas fa-trash"></i>
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-danger btn-sm mb-2"
-                  data-mdb-toggle="tooltip"
-                  title="Move to the wish list"
-                >
-                  <i class="fas fa-heart"></i>
-                </button>
+               
+               
                 <!-- Data -->
               </div>
 
@@ -66,7 +52,7 @@
                 <!-- Quantity -->
                 <div class="d-flex mb-4" style="max-width: 300px">
                   <button
-                    class="btn btn-primary px-3 me-2"
+                    class="btn btn btn-primary"
                     (click)="stepDown(item.id)"
                   >
                     <img
@@ -87,9 +73,7 @@
                       class="form-control"
                     />
 
-                    <label class="form-label" for="form1"
-                      >Số lượng người đăng ký</label
-                    >
+                    <p style="text-align: center;">Số lượng người đăng ký</p>
                   </div>
 
                   <button
@@ -124,7 +108,7 @@
         </div>
         <div class="card mb-4">
           <div class="card-body">
-            <p><strong>Expected shipping delivery</strong></p>
+            <p><strong>ĐĂNG KÝ THANH TOÁN</strong></p>
             <form [formGroup]="userForm">
               <div class="form-group">
                 <label for="exampleInputEmail1">Họ và tên</label>
@@ -222,7 +206,7 @@
       <div class="col-md-4">
         <div class="card mb-4">
           <div class="card-header py-3">
-            <h5 class="mb-0">Summary</h5>
+            <h5 class="mb-0">Tổng thanh toán</h5>
           </div>
           <div class="card-body">
             <ul class="list-group list-group-flush" *ngFor="let item of tour">

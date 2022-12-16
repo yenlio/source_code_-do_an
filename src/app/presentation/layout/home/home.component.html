@@ -30,19 +30,13 @@
               Khám phá Việt Nam- vẻ đẹp tiềm ẩn
             </h4>
             <h1 class="hero-title">Cùng Vitour, siêu sale du lịch</h1>
-            <p class="mb-4 fw-medium">
-              Built Wicket longer admire do barton vanity itself do in it.<br
-                class="d-none d-xl-block"
-              />Preferred to sportsmen it engrossed listening. Park gate<br
-                class="d-none d-xl-block"
-              />sell they west hard for the.
-            </p>
+            
             <div class="text-center text-md-start">
               <a
                 class="btn btn-primary btn-lg me-md-4 mb-3 mb-md-0 border-0 primary-btn-shadow"
                 href="#!"
                 role="button"
-                >Find out more</a
+                >Tìm hiểu thêm</a
               >
               <div class="w-100 d-block d-md-none"></div>
               <a
@@ -57,7 +51,7 @@
                     src="../../../../assets/images/hero/play.svg"
                     width="15"
                     alt="paly" /></span></a
-              ><span class="fw-medium">Play Demo</span>
+              >
               <div
                 class="modal fade"
                 id="popupVideo"
@@ -105,6 +99,7 @@
         <div class="mb-7 text-center">
           <h3
             class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize"
+            style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;"
           >
             NHỮNG DỊCH VỤ TUYỆT VỜI CỦA CHÚNG TÔI !
           </h3>
@@ -120,9 +115,9 @@
                   width="75"
                   alt="Service"
                 />
-                <h4 class="mb-3">Calculated Weather</h4>
+                <h4 class="mb-3">Giá</h4>
                 <p class="mb-0 fw-medium">
-                  Chọn những tour tuyệt vời với giá hợp lý
+                  Trải nghiệm với giá hợp lý
                 </p>
               </div>
             </div>
@@ -137,7 +132,7 @@
                   width="75"
                   alt="Service"
                 />
-                <h4 class="mb-3">Calculated Weather</h4>
+                <h4 class="mb-3">Nhanh chóng</h4>
                 <p class="mb-0 fw-medium">Thanh toán nhanh chóng</p>
               </div>
             </div>
@@ -152,7 +147,7 @@
                   width="75"
                   alt="Service"
                 />
-                <h4 class="mb-3">Calculated Weather</h4>
+                <h4 class="mb-3">Chuyên nghiệp</h4>
                 <p class="mb-0 fw-medium">Xử lý nhanh chóng.</p>
               </div>
             </div>
@@ -167,9 +162,9 @@
                   width="75"
                   alt="Service"
                 />
-                <h4 class="mb-3">Calculated Weather</h4>
+                <h4 class="mb-3">Dễ dàng</h4>
                 <p class="mb-0 fw-medium">
-                  Built Wicket longer admire do barton vanity itself do in it.
+                 Giao diện thân thiện, dễ sử dụng
                 </p>
               </div>
             </div>
@@ -205,6 +200,8 @@
                 class="card-img-top"
                 src="{{item.fileUrl}}"
                 alt="Rome, Italty"
+                width="100%"
+                height="250px"
               />
             </div>
 
@@ -224,6 +221,7 @@
                 >
                   <h4 class="text-secondary fw-medium">
                     <a
+                    [routerLink]="['/dashboard/detail', hotTour.id]"
                       class="link-900 text-decoration-none stretched-link"
                      
                       >{{hotTour.title}}</a
@@ -259,77 +257,10 @@
         <div class="row">
           <div class="col-md-12">
             <div class="search-wrap-1 ftco-animate p-4">
-              <!-- <form action="#" class="search-property-1">
-                <div class="row">
-                  <div class="col-lg align-items-end">
-                    <div class="form-group">
-                      <div class="form-field">
-                        <div class="icon">
-                          <span class="ion-ios-search"></span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Search place"  />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg align-items-end">
-                    <div class="form-group">
-                      <div class="form-field">
-                        <div class="icon">
-                          <span class="ion-ios-calendar"></span>
-                        </div>
-                        <input type="text" class="form-control checkin_date" placeholder="Check In Date" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg align-items-end">
-                    <div class="form-group">
-                      <div class="form-field">
-                        <div class="icon">
-                          <span class="ion-ios-calendar"></span>
-                        </div>
-                        <input type="text" class="form-control checkout_date" placeholder="Check Out Date" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg align-items-end">
-                    <div class="form-group">
-                      <div class="form-field">
-                        <div class="select-wrap">
-                          <div class="icon">
-                            <span class="ion-ios-arrow-down"></span>
-                          </div>
-                          <select name="" id="" class="form-control">
-                            <option value="">$5,000</option>
-                            <option value="">$10,000</option>
-                            <option value="">$50,000</option>
-                            <option value="">$100,000</option>
-                            <option value="">$200,000</option>
-                            <option value="">$300,000</option>
-                            <option value="">$400,000</option>
-                            <option value="">$500,000</option>
-                            <option value="">$600,000</option>
-                            <option value="">$700,000</option>
-                            <option value="">$800,000</option>
-                            <option value="">$900,000</option>
-                            <option value="">$1,000,000</option>
-                            <option value="">$2,000,000</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg align-self-end">
-                    <div class="form-group">
-                      <button type="button" class="btn btn-success rounded" (click)="search()">
-                        Tìm kiếm
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </form> -->
+        
 
               <form action="" [formGroup]="searchForm">
-                <div class="row">
+                <div class="row" style="    margin-left: 98px;">
                   <div class="col-lg align-items-end">
                     <div class="form-group">
                       <div class="form-field">
@@ -345,21 +276,22 @@
                       </div>
                     </div>
                   </div>
-                  <!-- <div class="col-lg align-items-end">
+                  <div class="col-lg align-items-end">
                     <div class="form-group">
                       <div class="form-field">
                         <div class="icon">
-                          <span class="ion-ios-calendar"></span>
+                          <span class="ion-ios-search"></span>
                         </div>
                         <input
                           type="text"
-                          class="form-control checkin_date"
-                          placeholder="Check In Date"
-                          formControlName="fullName"
+                          class="form-control"
+                          placeholder="Search place"
+                          formControlName="searchByPlace"
                         />
                       </div>
                     </div>
-                  </div> -->
+                  </div>
+                 
                   <div class="col-lg align-items-end">
                     <div class="form-group">
                       <div class="form-field">
@@ -375,38 +307,12 @@
                       </div>
                     </div>
                   </div>
-                  <!-- <div class="col-lg align-items-end">
-                    <div class="form-group">
-                      <div class="form-field">
-                        <div class="select-wrap">
-                          <div class="icon">
-                            <span class="ion-ios-arrow-down"></span>
-                          </div>
-                          <select name="" id="" class="form-control">
-                            <option value="">$5,000</option>
-                            <option value="">$10,000</option>
-                            <option value="">$50,000</option>
-                            <option value="">$100,000</option>
-                            <option value="">$200,000</option>
-                            <option value="">$300,000</option>
-                            <option value="">$400,000</option>
-                            <option value="">$500,000</option>
-                            <option value="">$600,000</option>
-                            <option value="">$700,000</option>
-                            <option value="">$800,000</option>
-                            <option value="">$900,000</option>
-                            <option value="">$1,000,000</option>
-                            <option value="">$2,000,000</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                  </div> -->
+                  
                   <div class="col-lg align-self-end">
                     <div class="form-group">
                       <button
                         type="button"
-                        class="btn btn-success rounded"
+                        class="btn btn-primary rounded"
                         (click)="search()"
                       >
                         Tìm kiếm
@@ -437,7 +343,7 @@
               class="card-img-top"
               alt="..."
               width="100%"
-              height="100%"
+              height="200px"
             />
             </div>
               <div class="card-body">
@@ -472,6 +378,7 @@
                 <h5 class="text-secondary">Easy and Fast</h5>
                 <h3
                   class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize"
+                  style="font-family: 'Times New Roman', Times, serif;"
                 >
                   Những tips thú vị khi đi du lịch
                 </h3>
@@ -484,15 +391,27 @@
           >
             <div class="col-3" style="width: 400px; height: 470px">
               <img
-                src="../../../../assets/images/image_1.jpg"
+                src="../../../../assets/images/Đà nẵng.jpg"
                 alt="..."
                 style="margin-left: -16px; width: 400px; height: 270px"
               />
               <div class="card-body" style="width: 400px; margin-left: -25px">
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
+                <a href=""></a>
+                <a class="card-text" href="https://mia.vn/cam-nang-du-lich/hai-san-nam-danh-quan-hai-san-noi-tieng-nhat-da-nang-co-ngon-nhu-loi-don-1743">
+                  Hải sản Năm Đảnh - Quán hải sản nổi tiếng nhất Đà Nẵng có ngon như lời đồn?...
+                </a>
+              </div>
+            </div>
+            <div class="col-3" style="width: 400px; height: 470px">
+              <img
+                src="../../../../assets/images/phú quốc 2.jpg"
+                alt="..."
+                style="margin-left: -16px; width: 400px; height: 270px"
+              />
+              <div class="card-body" style="width: 400px; margin-left: -25px">
+                <a href="https://dulichkhampha24.com/kinh-nghiem-du-lich-phu-quoc.html" class="card-text">
+                  Những kinh nghiệm du lịch Phú Quốc tự túc mình gửi tới bạn dưới đây là những trải nghiệm thực tế của bản thân mình qua 4 lần tới Phú Quốc...
+                </a>
               </div>
             </div>
             <div class="col-3" style="width: 400px; height: 470px">
@@ -502,23 +421,9 @@
                 style="margin-left: -16px; width: 400px; height: 270px"
               />
               <div class="card-body" style="width: 400px; margin-left: -25px">
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
-            </div>
-            <div class="col-3" style="width: 400px; height: 470px">
-              <img
-                src="../../../../assets/images/image_1.jpg"
-                alt="..."
-                style="margin-left: -16px; width: 400px; height: 270px"
-              />
-              <div class="card-body" style="width: 400px; margin-left: -25px">
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
+                <a class="card-text" href="https://www.klook.com/vi/blog/kinh-nghiem-du-lich-ha-long/">
+                  Du lịch Vịnh Hạ Long-Một trong bảy kỳ quan thiên nhiên thế giới...
+                </a>
               </div>
             </div>
           </div>
@@ -531,11 +436,12 @@
         <div class="row">
           <div class="col-lg-5">
             <div class="mb-8 text-start">
-              <h5 class="text-secondary">Testimonials</h5>
+              <h5 class="text-secondary"></h5>
               <h3
                 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize"
+                style="font-family:Arial, Helvetica, sans-serif; color: rgb(251, 190, 48);"
               >
-                What people say about Us.
+                Mọi người nói về chúng tôi
               </h3>
             </div>
           </div>
@@ -589,12 +495,10 @@
                       </div>
                       <div class="card-body p-4">
                         <p class="fw-medium mb-4">
-                          &quot;On the Windows talking painted pasture yet its
-                          express parties use. Sure last upon he same as knew
-                          next. Of believed or diverted no.&quot;
+                          &quot;Website rất tốt, giúp tôi nhanh chóng tìm được tour du lịch ưng ý!.&quot;
                         </p>
-                        <h5 class="text-secondary">Mike taylor</h5>
-                        <p class="fw-medium fs--1 mb-0">Lahore, Pakistan</p>
+                        <h5 class="text-secondary">Nam Nguyen</h5>
+                        <p class="fw-medium fs--1 mb-0">Đà Nẵng</p>
                       </div>
                     </div>
                     <div
@@ -620,12 +524,10 @@
                       </div>
                       <div class="card-body p-4">
                         <p class="fw-medium mb-4">
-                          &quot;Jadoo is recognized as one of the finest travel
-                          agency in the world. When it came to planning a trip,
-                          I found them to be dependable.&quot;
+                          &quot;Ở website giúp tôi có thể tìm được những tour du lịch ưng ý, tôi rất hài lòng.&quot;
                         </p>
-                        <h5 class="text-secondary">Thomas Wagon</h5>
-                        <p class="fw-medium fs--1 mb-0">CEO of Red Button</p>
+                        <h5 class="text-secondary">Long Trần</h5>
+                        <p class="fw-medium fs--1 mb-0">Bắc Giang</p>
                       </div>
                     </div>
                     <div
@@ -650,12 +552,10 @@
                       </div>
                       <div class="card-body p-4">
                         <p class="fw-medium mb-4">
-                          &quot;On the Windows talking painted pasture yet its
-                          express parties use. Sure last upon he same as knew
-                          next. Of believed or diverted no.&quot;
+                          &quot;Ở website giúp tôi có thể tìm được những tour du lịch ưng ý, ..&quot;
                         </p>
-                        <h5 class="text-secondary">Kelly Willium</h5>
-                        <p class="fw-medium fs--1 mb-0">Khulna, Bangladesh</p>
+                        <h5 class="text-secondary">Kelly Tran</h5>
+                        <p class="fw-medium fs--1 mb-0">Lâm Đồng</p>
                       </div>
                     </div>
                     <div
@@ -706,6 +606,7 @@
     <!-- ============================================-->
 
     <div class="position-relative pt-9 pt-lg-8 pb-6 pb-lg-8">
+      <h1 style="text-align: center;">ĐƠN VỊ TÀI TRỢ</h1>
       <div class="container">
         <div class="row row-cols-lg-5 row-cols-md-3 row-cols-2 flex-center">
           <div class="col">
@@ -770,6 +671,7 @@
     <!-- ============================================-->
     <!-- <section> begin ============================-->
     <section class="pt-6">
+     
       <div class="container">
         <div
           class="py-8 px-5 position-relative text-center"
@@ -806,8 +708,7 @@
           <div class="row justify-content-center">
             <div class="col-lg-8 col-md-10">
               <h2 class="text-secondary lh-1-7 mb-7">
-                Subscribe to get information, latest news and other interesting
-                offers about Cobham
+              Theo dõi để nhận được những tour du lịch hot
               </h2>
               <form class="row g-3 align-items-center w-lg-75 mx-auto">
                 <div class="col-sm">
@@ -827,7 +728,7 @@
                 </div>
                 <div class="col-sm-auto">
                   <button class="btn btn-danger orange-gradient-btn fs--1">
-                    Subscribe
+                    Gửi
                   </button>
                 </div>
               </form>
@@ -853,35 +754,35 @@
               alt="jadoo"
             />
             <p class="fs--1 text-secondary mb-0 fw-medium">
-              Book your trip in minute, get full Control for much longer.
+             Du lịch là dễ !!
             </p>
           </div>
           <div class="col-lg-2 col-md-4 mb-4 mb-lg-0 order-lg-1 order-md-2">
             <h4
               class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4"
             >
-              Company
+              Công ty
             </h4>
             <ul class="list-unstyled mb-0">
               <li class="mb-2">
                 <a
                   class="link-900 fs-1 fw-medium text-decoration-none"
                   href="#!"
-                  >About</a
+                  >Về chúng tôi</a
                 >
               </li>
               <li class="mb-2">
                 <a
                   class="link-900 fs-1 fw-medium text-decoration-none"
                   href="#!"
-                  >Careers</a
+                  >Chăm sóc KH</a
                 >
               </li>
               <li class="mb-2">
                 <a
                   class="link-900 fs-1 fw-medium text-decoration-none"
                   href="#!"
-                  >Mobile</a
+                  >Hotlive</a
                 >
               </li>
             </ul>
@@ -890,14 +791,14 @@
             <h4
               class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4"
             >
-              Contact
+              Liên hệ
             </h4>
             <ul class="list-unstyled mb-0">
               <li class="mb-2">
                 <a
                   class="link-900 fs-1 fw-medium text-decoration-none"
                   href="#!"
-                  >Help/FAQ</a
+                  >Trợ giúp/FAQ</a
                 >
               </li>
               <li class="mb-2">
@@ -911,7 +812,7 @@
                 <a
                   class="link-900 fs-1 fw-medium text-decoration-none"
                   href="#!"
-                  >Affiliate</a
+                  >Liên kết</a
                 >
               </li>
             </ul>
@@ -920,14 +821,14 @@
             <h4
               class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4"
             >
-              More
+              Hơn thế
             </h4>
             <ul class="list-unstyled mb-0">
               <li class="mb-2">
                 <a
                   class="link-900 fs-1 fw-medium text-decoration-none"
                   href="#!"
-                  >Airlinefees</a
+                  >Máy bay</a
                 >
               </li>
               <li class="mb-2">
@@ -949,7 +850,7 @@
           <div
             class="col-lg-3 col-md-5 col-12 mb-4 mb-md-6 mb-lg-0 order-lg-4 order-md-1"
           >
-            <div class="icon-group mb-4">
+            <!-- <div class="icon-group mb-4">
               <a
                 class="text-decoration-none icon-item shadow-social"
                 id="facebook"
@@ -966,9 +867,9 @@
                 href="#!"
                 ><i class="fab fa-twitter"> </i
               ></a>
-            </div>
+            </div> -->
             <h4 class="fw-medium font-sans-serif text-secondary mb-3">
-              Discover our app
+              Khám phá chúng tôi
             </h4>
             <div class="d-flex align-items-center">
               <a href="#!">
@@ -992,7 +893,7 @@
 
     <div class="py-5 text-center">
       <p class="mb-0 text-secondary fs--1 fw-medium">
-        All rights reserved@jadoo.co
+        All rights nguyenhoangyen@gmail.com
       </p>
     </div>
   </main>

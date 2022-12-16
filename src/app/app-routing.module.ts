@@ -10,7 +10,7 @@ const routes: Routes = [
       import('./presentation/layout/layout.module').then(
         (m) => m.LayoutModule
       )
-      // , canActivate:[AuthGuard]
+      ,
   },
   {
     path: 'auth',
@@ -18,7 +18,8 @@ const routes: Routes = [
       import('./presentation/authenticate/authenticate.module').then(
         (m) => m.AuthenticateModule
       )
-      // , canActivate:[AuthGuard]
+      , 
+      
   },
   {
     path: 'dashboard',
@@ -34,7 +35,7 @@ const routes: Routes = [
       import('./presentation/admin/admin.module').then(
         (m) => m.AdminModule
       ),
-      // canActivate: [AuthGuard,RoleGuard],
+      canActivate: [AuthGuard,RoleGuard],
       data: { 
         expectedRole: 'admin'
       } 

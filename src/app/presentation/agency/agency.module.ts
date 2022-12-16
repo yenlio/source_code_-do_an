@@ -12,6 +12,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 // import { TourComponent } from './agency-dashboard/tour/tour.component';
 import { TourAccessComponent } from './agency-dashboard/tour-access/tour-access.component';
 import { ManagerPostAgencyComponent } from './agency-dashboard/manager-post-agency/manager-post-agency.component';
+import { NgChartsModule } from 'ng2-charts';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/agency' },
   {
@@ -42,6 +43,7 @@ const routes: Routes = [
  
   imports: [
     // RouterModule.forRoot(routes, { enableTracing: false, scrollPositionRestoration: 'enabled' }),
+    NgChartsModule,
     NgbModule,
     FormsModule,
     ReactiveFormsModule,

@@ -22,6 +22,18 @@ export class AdminService {
     return this.http.get(path);
   }
 
+  public getAgency(): Observable<any> {
+    const path = AUTH_API + 'getAgency';
+    console.log(path, 'payload');
+    return this.http.get(path);
+  }
+
+  public confirmAgency(id: any): Observable<any> {
+    const path = AUTH_API + 'verify_agency' + `?id=${id}`;
+    console.log(path, " path");
+    return this.http.post(path, null);
+  }
+
 
 
   public updateTour(id: any): Observable<any> {
@@ -34,6 +46,8 @@ export class AdminService {
     console.log(path, " path");
     return this.http.delete(path);
   }
+
+
 
   // public searchTour(data: any): Observable<any> {
   //   let params = new HttpParams();

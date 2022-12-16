@@ -2,6 +2,7 @@ import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core'
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { PaymentService } from 'src/app/data/service/payment.service';
+import { HistoryService } from 'src/app/data/service/history.service';
 @Component({
   selector: 'app-popup-payment',
   templateUrl: './popup-payment.component.html',
@@ -13,11 +14,14 @@ export class PopupPaymentComponent implements OnInit {
   tours!:any
   dataPayment!:any
   totalPrice!:any
+  messagePayment:any
   constructor(
     public dialogRef: MatDialogRef<PopupPaymentComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private PaymentService:PaymentService,
-    private router: Router
+    private router: Router,
+    private historyService:HistoryService
+    
   ) {}
 
   ngOnInit(): void {
@@ -36,15 +40,17 @@ export class PopupPaymentComponent implements OnInit {
  console.log(this.tours," tour");
  console.log(this.dataNoti.data.data.status,"thế nào");
  
- 
- 
-  
-  
   }
   onSave(){
     this.PaymentService.postPayment(this.dataPayment,true).subscribe((res:any)=>{
       console.log(res,"du lieu thanh cong");
+      this.messagePayment=res
       this.router.navigate(['dashboard/history']);
+      this.historyService.getdataPayment({
+        messagePayment:this.messagePayment,
+        name:this.dataPayment.tenNguoiDk
+      })
+
 
   
     })

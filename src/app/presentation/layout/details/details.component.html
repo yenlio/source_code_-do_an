@@ -100,20 +100,24 @@
 
 					<table>
 						<tr>
-							<td>Số lượng thành viên tối đa trong tour </td>
-							<td>: {{tour.totalMember}}</td>
+							<td><h6><strong>Số lượng thành viên tối đa trong tour </strong></h6></td>
+							<td><h6>: {{tour.totalMember}}</h6></td>
 						</tr>
 						<tr>
-							<td>Đơn vị thực hiện </td>
-							<td>: Công ty cổ phần Việt travel</td>
+							<td><h6><strong>Đơn vị thực hiện</strong> </h6></td>
+							<td><h6>
+								: Công ty cổ phần Việt travel
+							</h6></td>
 						</tr>
 						<tr>
-							<td>Thời gian bắt đầu </td>
-							<td>: {{tour.timeStart}}</td>
+							<td><h6><strong>Thời gian bắt đầu</strong></h6> </td>
+							<td><h6>: {{tour.timeStart}}</h6></td>
 						</tr>
 						<tr>
-							<td>Tổng số ngày trong tour </td>
-							<td>:{{tour.totalDay}}</td>
+							<td><h6><strong>Tổng số ngày trong tour</strong></h6> </td>
+							<td><h6>
+								:{{tour.totalDay}}
+							</h6></td>
 						</tr>
 
 
@@ -128,9 +132,9 @@
 					display: flex;
 					justify-content: center;
 					padding-top: 30px;">
-						<button class="add-to-cart btn btn-default" type="button" (click)="addToCart()"
+						<button class="add-to-cart btn btn-primary" type="button" (click)="addToCart()"
 							[routerLink]="['/dashboard/cart']">add to cart</button>
-						<button class="like btn btn-default ms-4" type="button" (click)="postTim()"><span
+						<button class="like btn btn-danger ms-4" type="button" (click)="postTim()"><span
 								class="fa fa-heart"></span></button>
 					</div>
 				</div>
@@ -146,9 +150,7 @@
 			<div class="container my-5 py-5">
 
 				<h5>Mô tả chi tiết :</h5>
-				<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis vel praesentium a corrupti sit
-					ratione quidem nesciunt quia esse, architecto unde dolorem est rem consequuntur eveniet, explicabo
-					voluptatibus, cum totam.</p>
+				<p>{{tour.description}}</p>
 			</div>
 
 		</section>

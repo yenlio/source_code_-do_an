@@ -18,7 +18,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
   public jwtHelper: JwtHelperService = new JwtHelperService();
 
-  public login(payload: any): Observable<any> {
+  public login(payload: any): Observable<any> { 
     const path = AUTH_API + 'login';
     console.log(path, payload, 'payload');
     return this.http.post(path, payload);
@@ -27,6 +27,10 @@ export class AuthService {
   IsLoggedIn() {
     return localStorage.getItem("token") != null;
   }
+  isRole(){
+    
+  }
+
 
  public getToken(){
     return localStorage.getItem("token")||"";

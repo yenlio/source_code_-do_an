@@ -2,32 +2,32 @@
     <table class="table">
         <thead class="thead-dark">
             <tr>
-                <th scope="col">#id Tour</th>
-                <th scope="col">Tên tour</th>
-                <th scope="col">Đơn giá (VND)</th>
-                <th scope="col">Số lượng người</th>
-                <th scope="col">Thời gian khởi hành</th>
-                <th scope="col">Công ty chủ quản</th>
+                <th scope="col">#id Agency</th>
+                <th scope="col">Họ và tên</th>
+                <th scope="col">User name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Số điện thoại</th>
+              
                 <th scope="col" colspan="3" class=""></th>
 
 
             </tr>
         </thead>
-        <tbody >
+        <tbody *ngFor="let member of dataAgency">
 
-            <tr>
+            <tr *ngIf="member.active==false">
                 <!-- <th scope="row">3</th> -->
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
+                <td>{{member.idAccount}}</td>
+                <td>{{member.fullName}}</td>
+                <td>{{member.userName}}</td>
+                <td>{{member.email}}</td>
+                <td>{{member.phone}}</td>
+             
                 <!-- <button type="button" class="btn btn-link" (click)="openDialog(tour)">Xem chi tiết</button> -->
-                <td><button class="btn btn-primary"  type="submit">Duyệt</button></td>
-                <!-- <td>
-                    <button type="button" (click)="deleteTour(tour.id)" class="btn btn-danger">Hủy</button>
-                </td> -->
+                <td><button class="btn btn-primary"  type="submit" (click)="confirmAgency(member.idAccount)">Duyệt</button></td>
+                <td>
+                    <button type="button" (click)="deleteAgency(member.idAccount)" class="btn btn-danger">Hủy</button>
+                </td>
             </tr>
 
 
