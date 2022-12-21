@@ -10,7 +10,7 @@ export class ManagerPostAgencyComponent implements OnInit {
 
   dataTour!:any
   localRole!:any
-  constructor(private AgencyService:AgencyService) { }
+  constructor(private AgencyService:AgencyService,private AdminService:AdminService) { }
 
   ngOnInit(): void {
     this.getPostTour()
@@ -23,5 +23,12 @@ export class ManagerPostAgencyComponent implements OnInit {
      console.log("thanh cong");
      
     })
+    }
+
+    deleteTour(id:any){
+      this.AdminService.deleteTour(id).subscribe((res)=>{
+        this.getPostTour()
+      })
+  
     }
 }

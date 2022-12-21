@@ -27,7 +27,7 @@ const routes: Routes = [
       import('./presentation/layout/layout.module').then(
         (m) => m.LayoutModule
       )
-      ,canActivate:[AuthGuard]
+      ,
   },
   {
     path: 'admin',

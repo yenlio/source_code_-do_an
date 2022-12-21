@@ -33,6 +33,8 @@ export class AuthGuard implements CanActivate {
       return true;
     }
     else{
+      console.log("chưa dang nhap");
+      
      
       this.route.navigate(["auth/login"]);
       return false

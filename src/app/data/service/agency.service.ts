@@ -15,6 +15,13 @@ export class AgencyService {
     console.log(path, payload, 'payload');
     return this.http.post(path, payload);
   }
+ 
+   public getmoney(id: any): Observable<any> {
+    console.log(id," id");
+    
+    const path = AUTH_API + `tour/getMoney/${id}`;  
+    return this.http.get(path);
+  }
 
   public getTourbyAgency(id: any): Observable<any> {
     console.log(id," id");

@@ -47,6 +47,14 @@ export class AdminService {
     return this.http.delete(path);
   }
 
+  public getInforAdmin(id:any): Observable<any> {
+    const path = AUTH_API + `role/${id}`;
+    console.log(path, 'payload');
+    return this.http.get(path);
+  }
+
+
+
 
 
   // public searchTour(data: any): Observable<any> {

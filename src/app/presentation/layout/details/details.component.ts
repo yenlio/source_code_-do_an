@@ -59,10 +59,16 @@ export class DetailsComponent implements OnInit {
     this.idTour = id
     this.UserService.getTourById(id).subscribe((res) => {
       this.tour = res.data
+      this.tour.price=this.formatNumber(this.tour.price)
       console.log(this.tour, "tour detail test");
 
     })
   }
+
+  formatNumber(num: any) {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+  }
+
 
 
   addToCart() {

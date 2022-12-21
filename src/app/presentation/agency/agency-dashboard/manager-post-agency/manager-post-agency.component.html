@@ -1,6 +1,9 @@
 <div class="tour-access">
+    <br/>
+    <br/>
+    <br/>
     <div style="text-align: center; margin-bottom: 20px;">
-        <h2> CÁC BÀI ĐĂNG ĐÃ ĐĂNG</h2>
+        <h2 style="color:#0d3073; font-weight: bold ;"> CÁC BÀI ĐĂNG ĐÃ ĐĂNG</h2>
     </div>
     <table class="table">
         <thead class="thead-dark" >
@@ -25,8 +28,10 @@
                 <td>{{tour.price}}</td>
                 <td>{{tour.totalMember}}</td>
                 <td>{{tour.timeStart}}</td>
-                <td>Công ty a</td>
-              
+                <td>Công ty Việt travel</td>
+                <td>
+                    <button type="button" (click)="deleteTour(tour.id)" class="btn btn-danger">Xoá</button>
+                 </td>
             </tr>
           
         

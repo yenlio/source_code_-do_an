@@ -1,9 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule ,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { DetailsComponent } from './details/details.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from '../shared/header/header.component';
+import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 // import { CommentsComponent } from './comments/comments.component';
 import { CommentComponent } from './comment/comment.component';
 import { CommentFormComponent } from './comment-form/comment-form.component';
@@ -19,6 +20,7 @@ import { NgImageSliderModule } from 'ng-image-slider';
 
 import { GalleryModule } from 'ng-gallery';
 import { LightboxModule } from 'ng-gallery/lightbox';
+import { AuthGuard } from '../shared/auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -36,6 +38,7 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartPaymentComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: 'blog',
@@ -47,7 +50,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  // schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   declarations: [
     HomeComponent,
     DetailsComponent,
@@ -70,6 +73,7 @@ const routes: Routes = [
     CommonModule, 
     FormsModule,
     ReactiveFormsModule,
+    NgbPaginationModule, NgbAlertModule,
     RouterModule.forChild(routes),
   ]
 })

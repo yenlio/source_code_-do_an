@@ -14,6 +14,7 @@ export class PopupDetailComponent implements OnInit {
   dialogDescription!: string;
   dataDialog!: any
   dialogConfig!: MatDialogConfig;
+  dataAgency:any
 
   @Output() confirm= new EventEmitter<any>()
   @Input() showForm = false;
@@ -32,12 +33,19 @@ export class PopupDetailComponent implements OnInit {
     console.log(id," id");
        this.AdminService.updateTour(id).subscribe((res)=>{
         console.log(res,"du lieu update xong");
-           
+           this.getAgency()
        })
 
   }
   closeForm() {
 
+  }
+  getAgency(){
+    this.AdminService.getAgency().subscribe((res)=>{
+      this.dataAgency=res.data
+      console.log(this.dataAgency,"data agency");
+      
+    })
   }
 
 

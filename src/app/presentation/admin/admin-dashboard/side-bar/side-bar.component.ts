@@ -20,4 +20,13 @@ export class SideBarComponent implements OnInit {
   //   this.route.navigate(['/chart']);
   // }
 
+  logout(){
+    localStorage.removeItem("token")
+    localStorage.removeItem("id")
+    localStorage.removeItem("token")
+    localStorage.removeItem('roles');
+    localStorage.removeItem("message")
+    this.route.navigate(['/auth/login']);
+  }
+
 }

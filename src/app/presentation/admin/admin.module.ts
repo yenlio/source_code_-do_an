@@ -11,6 +11,8 @@ import { PopupDetailComponent } from './admin-dashboard/popup-detail/popup-detai
 import {MatDialogModule} from '@angular/material/dialog';
 import { EditorModule,TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 import { BlogManagerComponent } from './admin-dashboard/blog-manager/blog-manager.component';
+import { ChartadminComponent } from './admin-dashboard/chartadmin/chartadmin.component';
+
 // import { MatCarouselModule } from 'ng-mat-carousel';
 // import { MatCarouselModule } from '@ngmodule/material-carousel';
 
@@ -21,6 +23,7 @@ const routes: Routes = [
     path: '',
     component: AdminDashboardComponent,
     children:[
+      {path:'managerChart',component:ChartadminComponent},
       {path:'managerPost',component:ManagerPostsComponent},
       {path:'managerRole',component:ManagerRoleComponent},
       {path:'managerBlog',component:BlogManagerComponent}
@@ -39,7 +42,8 @@ const routes: Routes = [
     SideBarComponent,
     TopBarComponent,
     PopupDetailComponent,
-    BlogManagerComponent
+    BlogManagerComponent,
+    ChartadminComponent
   ],
   imports: [
     // BrowserAnimationsModule,

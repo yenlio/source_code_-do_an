@@ -1,0 +1,110 @@
+<div class="manager-chart">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <section class="home-section">
+        <div class="home-content">
+            <div class="overview-boxes">
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic">Tổng số người</div>
+                        <div class="number">{{dataAdmin.getSumAll}}</div>
+                        <div class="indicator">
+                            <i class='bx bx-up-arrow-alt'></i>
+
+                        </div>
+                    </div>
+                    <i class='bx bx-cart-alt cart'></i>
+                </div>
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic">Tổng người dùng</div>
+                        <div class="number">{{dataAdmin.getSumUser}}</div>
+                        <div class="indicator">
+                            <i class='bx bx-up-arrow-alt'></i>
+
+                        </div>
+                    </div>
+                    <i class='bx bxs-cart-add cart two'></i>
+                </div>
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic">Tổng agency</div>
+                        <div class="number">{{dataAdmin.getSumAngency}}</div>
+                        <div class="indicator">
+                            <i class='bx bx-up-arrow-alt'></i>
+
+                        </div>
+                    </div>
+                    <i class='bx bx-cart cart three'></i>
+                </div>
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic">Tổng admin</div>
+                        <div class="number">1 </div>
+                        <div class="indicator">
+                            <i class='bx bx-down-arrow-alt down'></i>
+
+                        </div>
+                    </div>
+                    <i class='bx bxs-cart-download cart four'></i>
+                </div>
+            </div>
+
+            <div class="sales-boxes">
+                <div class="recent-sales box">
+                    <div class="title">AGENCY ĐĂNG KÝ</div>
+                    <table class="table">
+                        <thead>
+                            <tr class="title_table">
+                                <th scope="col">#id </th>
+                                <th scope="col">Họ và tên</th>
+                                <th scope="col">User name</th>
+                                <th scope="col">Email</th>
+
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let member of dataAgency">
+
+                            <tr>
+                                <td>{{member.idAccount}}</td>
+                                <td>{{member.fullName}}</td>
+                                <td>{{member.userName}}</td>
+                                <td>{{member.email}}</td>
+
+
+
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                   
+                </div>
+                <div class="top-sales box">
+                    <div class="title">Agency hoạt động hiệu quả</div>
+                    <ul class="top-sales-details">
+                        <li>
+                            <a href="#">
+                                <!--<img src="images/sunglasses.jpg" alt="">-->
+                                <span class="product">Nguyễn Hoàng Nam</span>
+                            </a>
+                            <span class="price"></span>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <!--<img src="images/jeans.jpg" alt="">-->
+                                <span class="product">Nguyễn Hùng Điệp </span>
+                            </a>
+                            <span class="price">$1567</span>
+                        </li>
+                      
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

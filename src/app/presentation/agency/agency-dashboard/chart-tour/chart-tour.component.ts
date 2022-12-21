@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartConfiguration, ChartOptions, ChartType } from "chart.js";
+import { AgencyService } from 'src/app/data/service/agency.service';
+import { AdminService } from 'src/app/data/service/admin.service';
 @Component({
   selector: 'app-chart-tour',
   templateUrl: './chart-tour.component.html',
@@ -7,34 +9,36 @@ import { ChartConfiguration, ChartOptions, ChartType } from "chart.js";
 })
 export class ChartTourComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private AgencyService:AgencyService,private AdminService:AdminService) { }
+  dataAgency={
+    getMoneyTour:0,
+    getCountTour:0
   }
-  public lineChartData: ChartConfiguration<'line'>['data'] = {
-    labels: [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July'
-    ],
-    datasets: [
-      {
-        data: [ 65, 59, 80, 81, 56, 55, 40 ],
-        label: 'Series A',
-        fill: true,
-        tension: 0.5,
-        borderColor: 'black',
-        backgroundColor: 'rgba(255,0,0,0.3)'
-      }
-    ]
-  };
-  public lineChartOptions: ChartOptions<'line'> = {
-    responsive: false
-  };
-  public lineChartLegend = true;
+  dataTour:any
+  ngOnInit(): void {
+   this.getPostTour()
+    
+    this.AgencyService.getmoney(localStorage.getItem("id")).subscribe((res)=>{
+     this.dataAgency=res
+   this.dataAgency.getMoneyTour=this.formatNumber(this.dataAgency.getMoneyTour)
+      
+    })
+  }
+  formatNumber(num: any) {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+  }
+
+  getPostTour(){
+    this.AdminService.getTour().subscribe((res)=>{
+      this.dataTour=res.data
+
+     
+     
+console.log(this.dataTour," hi");
+
+      
+    })
+    }
+ 
 
 }

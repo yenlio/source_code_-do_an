@@ -24,9 +24,6 @@ export class LoginComponent implements OnInit {
   console.log("login");
   const formData=this.loginForm.value
   this.AuthService.login(formData).subscribe((res)=>{
-    console.log(res,"ressss");
-    
-    
     if(res!= null){
       this.responseData=res.data;
       console.log(this.responseData,"du lieu login gui ve");
@@ -42,7 +39,19 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("id",res.id)
       localStorage.setItem("token", this.responseData)
       localStorage.setItem('roles', JSON.stringify(listRole));
-      this.router.navigate(['/']);
+      let role= localStorage.getItem("roles")
+      // this.router.navigate(['/']);
+      if(role?.includes("USER")){
+        this.router.navigate(['/'])
+      }
+      else if(role?.includes("ADMIN")){
+        this.router.navigate(['/admin'])
+        
+      }
+      else if(role?.includes("AGENCY")){
+        this.router.navigate(['/agency'])
+      }
+   
     }
   })
   

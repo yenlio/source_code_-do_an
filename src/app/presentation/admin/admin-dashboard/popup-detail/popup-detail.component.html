@@ -1,10 +1,14 @@
-<h2 mat-dialog-title>{{ dataDialog.title }}</h2>
+<h2 mat-dialog-title><strong>{{ dataDialog.title }}</strong></h2>
 <mat-dialog-content class="mat-typography">
   <div class="container">
     <div class="row">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDvh7fAmpmE0VPkB-uCi3HyHMtqTy6eZK2d4etaBJB&s"
-        alt="" style="width:1000px; height: fit-content ;">
+      <div >
+        <div *ngFor="let image of dataDialog.image ;let i=index;let first = first" style="display: flex; justify-content: center;">
+          <img id="pic-1" *ngIf="first" src="{{image.fileUrl}}" style="width:auto; height: fit-content ;" />
+        </div>
+      </div>
     </div>
+    <br/>
     <div class="row">
       <table class="table">
         <thead class="thead-dark">
@@ -25,7 +29,7 @@
             <td>{{dataDialog.price}}</td>
             <td>{{dataDialog.totalMember}}</td>
             <td>{{dataDialog.timeStart}}</td>
-            <td>Công ty a</td>
+            <td>Công ty Việt Travel</td>
           </tr>
         </tbody>
       </table>
@@ -36,9 +40,9 @@
   </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial  (click)="confirmTour(dataDialog.id)" >Duyệt</button>
-  
+  <button type="button" class="btn btn-primary" [mat-dialog-close]="true"   (click)="confirmTour(dataDialog.id)">Duyệt</button>
+  <!-- <button mat-raised-button color="primary" [mat-dialog-close]="true"   (click)="confirmTour(dataDialog.id)" >Duyệt</button> -->
 </mat-dialog-actions>
+
 
 <!-- <button class="btn btn-primary" (click)="confirmTour(dataDialog.id)" type="submit">Duyệt</button> -->

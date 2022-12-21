@@ -1,5 +1,11 @@
+
 <div class="post-data">
+  <br/>
+    <br/>
+    <br/>
   <form [formGroup]="postTourForm">
+  <h1 style="text-align: center; color:#0d3073;"><strong>Đăng tour du lịch</strong></h1 >
+
     <div class="form-group">
       <label for="exampleFormControlInput1">Tên tour du lịch</label>
       <input
@@ -23,7 +29,7 @@
       ></textarea>
     </div>
     <div class="form-group">
-      <label for="exampleFormControlTextarea1">Gía</label>
+      <label for="exampleFormControlTextarea1">Giá</label>
       <input
         type="text"
         class="form-control"
@@ -62,11 +68,11 @@
     </div>
 
     <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Choose a date</mat-label>
+      <mat-label>Chọn ngày bắt đầu tour</mat-label>
       <input matInput [matDatepicker]="picker" [(ngModel)]="dataTour.timeStart" formControlName="timeStart">
       <mat-hint>MM/DD/YYYY</mat-hint>
       <mat-datepicker-toggle matSuffix [for]="picker">
-        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        <!-- <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon> -->
       </mat-datepicker-toggle>    
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
@@ -92,6 +98,9 @@
       />
     </div>
 
-    <button type="submit" (click)="submit()">submit</button>
+    <button  mat-raised-button color="primary" type="submit" (click)="submit()">Đăng tour</button>
   </form>
+  <footer>
+    <br>
+  </footer>
 </div>

@@ -15,7 +15,14 @@ export class RoleGuard implements CanActivate {
    var role= localStorage.getItem('roles');
    console.log(role,"role intercepter");
    
-   
+    // if(role?.includes("USER")){
+    //   console.log("hi");
+    //   this.router.navigate(['/admin']);
+    // }else{
+    
+      
+    // }
+ 
     
   
   }
